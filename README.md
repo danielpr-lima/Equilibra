@@ -21,16 +21,16 @@ Para garantir uma interface responsiva e funcional, o projeto utiliza o conjunto
 # 📁 Organização do Repositório
 
 equilibra/
-├── 📁 html/               # 👈 Todas as páginas do site
-   ├── index.html         # Landing Page / Home 
-   ├── login.html         # Tela de Login 
-   ├── cadastro.html      # Tela de Cadastro 
-   └── diario.html        # Registro de gastos com emojis 
-├── 📁 css/                # Estilização (CSS3)
-   ├── style.css          # Cores e Tipografia 
-│   └── layout.css         # Posicionamento e Responsividade
-├── 📁 js/                 # Lógica e Interatividade (JS)
-│   └── main.js            # Controle geral
-├── 📁 assets/             # Identidade Visual e Mídia
- ├── 📁 img/            # Logomarca e imagens das telas 
- └── 📁 icons/          # Emojis e ícones do sistema
+├── 📄 README.md             # Documentação principal do projeto 
+├── index.html               # Landing Page / Home 
+├── 📁 html/                 # Páginas estruturais do site 
+│   ├── login.html           # Tela de Login 
+│   ├── cadastro.html        # Tela de Cadastro 
+│   └── diario.html          # Registro de gastos com emojis 
+├── 📁 css/                  # Arquivos de estilização (CSS3) 
+│   └── layout.css           # Posicionamento e Responsividade 
+├── 📁 js/                   # Lógica e Interatividade (JavaScript) 
+│   └── main.js              # Script de controle geral do sistema 
+└── 📁 assets/               # Recursos de mídia e identidade visual 
+    ├── 📁 img/              # Logomarca e imagens das interfaces 
+    └── 📁 icons/            # Emojis e ícones para navegação
