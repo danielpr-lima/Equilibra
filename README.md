@@ -17,3 +17,20 @@ Para garantir uma interface responsiva e funcional, o projeto utiliza o conjunto
 * **HTML5:** Estruturação semântica do conteúdo da plataforma.
 * **CSS3:** Estilização, layout e responsividade.
 * **JavaScript (JS):** Lógica de programação, manipulação do DOM e interatividade do usuário.
+
+# 📁 Organização do Repositório
+
+equilibra/
+├── 📄 README.md             # Documentação principal do projeto 
+├── index.html               # Landing Page / Home 
+├── 📁 html/                 # Páginas estruturais do site 
+│   ├── login.html           # Tela de Login 
+│   ├── cadastro.html        # Tela de Cadastro 
+│   └── diario.html          # Registro de gastos com emojis 
+├── 📁 css/                  # Arquivos de estilização (CSS3) 
+│   └── layout.css           # Posicionamento e Responsividade 
+├── 📁 js/                   # Lógica e Interatividade (JavaScript) 
+│   └── main.js              # Script de controle geral do sistema 
+└── 📁 assets/               # Recursos de mídia e identidade visual 
+    ├── 📁 img/              # Logomarca e imagens das interfaces 
+    └── 📁 icons/            # Emojis e ícones para navegação
