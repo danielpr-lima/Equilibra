@@ -1,0 +1,162 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom, #e46cff, #73068c);
+    background-repeat: no repeat ;
+    margin: 0;
+}
+.header{
+    background: linear-gradient(to right,#8733ac, #d756ee);
+    width: 100%;
+}
+.header-conteiner{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1800px;
+}
+.logo{
+    display:flex;
+    align-items: center;   
+    padding: 20px;
+    
+}
+.logo img{
+    width: 60px;
+    margin-right: 15px;
+}
+.header h1{
+    text-align: center;
+    font-size: 28px ;
+    font-weight: 700;
+    color: white;
+    
+}
+.nav{
+    display: flex;
+    align-items: center;
+}
+.nav a{
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    margin-right: 30px ;
+}
+.nav a:hover{
+    color: #560277;
+}
+
+.conteiner-principal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1800px;
+    margin: auto;
+}
+
+
+.onda{
+    display: flex;
+    align-items: end;
+    width:100%;
+    /* background-image: url(../img/ondas/Ellipse\ 1\ \(1\).svg); */
+}
+.paragrafo{
+    color: white;
+}
+
+.titulo{
+    color: white;
+}
+.quadros{
+    display: flex;
+    
+}
+.quadros h3{
+    color: #560277;
+}
+
+.quadros p{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 100%;
+    word-spacing: 5%;
+    letter-spacing: 5%;
+}
+
+.quadro-direito,.quadro-esquerdo{
+    display: flex;
+    align-items: center;
+    flex-direction: column ;
+    background-color: white;
+    height:254px;
+    width: 324px;
+    margin: 50px 50px 50px 0px;
+    border-radius: 35px;
+    position: relative;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.1s ease, transform 0.8s ease;
+}
+
+.imagem {
+    width: 600px;
+    max-width: 100%;
+    margin: auto 200px;
+    animation: flutuar 4s ease-in-out infinite alternate;
+}
+.quadros .mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.titulo-quadro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    
+}
+.titulo-quadro h3{
+    font-size: 25px;
+}
+.botao{
+
+    background: linear-gradient(#73068c, #e46cff);
+    border-radius: 15px;
+    border: solid 1px white;
+    color: white;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadown 0.3s ease, filter 0.3s ease;
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+    
+}
+
+.botao:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+@keyframes flutuar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+
+
+
