@@ -24,20 +24,11 @@ gsap.from(quadros, {
   ease: "power3.out"
 })
 
-// let tween = gsap.to(".imagem", {duration: 3, y: 10, paused: true});
-
-// setTimeout(() => {
-//   tween.play();
-// }, 100);
-
-// setTimeout(() => {
-//   tween.reverse();
-// }, 3500); // 3 segundos de duração + 500ms de folga
 
 gsap.to(".imagem", {
   duration: 3, 
   y: 10,
   repeat: -1, 
   yoyo: true, 
-  delay: 0.1 // o seu atraso de 100ms
+  delay: 0.1 
 });
