@@ -7,20 +7,20 @@
 }
 .conteiner-parte2{
     max-width: 1800px;
-    height: 700px;
+    height: 580px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 60px 20px;
-    margin: 0 10px 0 100px;    
+    margin: 0 0 0 100px;    
 }
 .conteudo-esquerda{
     height: 460px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 0px;
     width: 50%;
     color: white;
 }

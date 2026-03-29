@@ -32,3 +32,11 @@ gsap.to(".imagem", {
   yoyo: true, 
   delay: 0.1 
 });
+
+gsap.to(".img-finance-parte2", {
+  duration: 3, 
+  y: 10,
+  repeat: -1, 
+  yoyo: true, 
+  delay: 0.5 
+});
