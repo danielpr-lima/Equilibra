@@ -8,9 +8,10 @@
 }
 
 body {
-    background: linear-gradient(to bottom, #e46cff, #73068c);
+    /* background: linear-gradient(to bottom, #e46cff, #73068c); */
+    background-color: #AC52D9;
     background-repeat: no-repeat;
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 
 /* --- Header --- */
@@ -64,7 +65,7 @@ body {
 
 .conteiner-principal {
     max-width: 1800px;
-    height: 600px;
+    height: 700px;
     padding: 60px 20px;
     display: flex;
     margin: 0 10px 0 100px;
@@ -80,13 +81,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .quadros {
     display: flex;
     gap: 30px;
     margin-top: 50px;
+    font-size: 20px;
 }
 
 .coluna-bloco {
@@ -98,8 +100,8 @@ body {
 .quadro-direito,
 .quadro-esquerdo {
     background-color: white;
-    height: 254px;
-    width: 324px;
+    height: 300px;
+    width: 330px;
     border-radius: 35px;
     padding: 25px;
     display: flex;
@@ -120,6 +122,7 @@ body {
     font-size: 22px;
 }
 
+
 .imagem {
     width: 450px;
     height: auto;
@@ -132,7 +135,7 @@ body {
     border-radius: 15px;
     border: solid 1px white;
     padding: 12px 40px;
-    margin-top: 50px;
+    margin-top: 25px;
     color: white;
     cursor: pointer;
     font-weight: 600;
