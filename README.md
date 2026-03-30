@@ -30,17 +30,20 @@ A estrutura de pastas do projeto está organizada de forma modular para facilita
 
 ```text
 equilibra/
-├── index.html                # Landing Page principal do sistema
+├── index.html                # Landing Page principal (apresentação)
 ├── README.md                 # Documentação principal do projeto
 ├── css/                      # Ficheiros de estilização modular
 │   ├── footer-style.css      # Estilos específicos do rodapé
-│   ├── parte1-style.css      # Estilos da secção principal e cabeçalho
-│   ├── parte2-style.css      # Estilos da segunda secção de conteúdo
-│   └── parte3-style.css      # Estilos dos cards e benefícios
+│   ├── home.css              # Estilos da página Home (dashboard)
+│   ├── parte1-style.css      # Estilos da secção inicial da Landing Page
+│   ├── parte2-style.css      # Estilos da secção de descrição
+│   └── parte3-style.css      # Estilos dos cards de benefícios
 ├── js/                       # Lógica e interatividade
 │   └── animacao.js           # Scripts de animação utilizando GSAP
+├── pages/                    # Páginas internas da aplicação
+│   └── home.html             # Página principal do utilizador (Dashboard)
 └── img/                      # Recursos visuais e identidade
     ├── bg/                   # Elementos gráficos de fundo (SVGs)
+    ├── home/                 # Ilustrações e cards da página Home
     └── icons/                # Ícones e logomarca da plataforma
----
 *© 2026 Equilibra - Projeto desenvolvido para fins académicos*.
