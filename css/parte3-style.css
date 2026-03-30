@@ -6,7 +6,7 @@
     background-size: cover;
 }
 
-.container {
+.container-pt3 {
     display: flex;
     /* Transforma o elemento em um container flexível. */
     flex-direction: column;
@@ -20,7 +20,7 @@
 
 }
 
-.container h2 {
+.container-pt3 h2 {
     color: #2D3748;
     /* cor do texto. */
     margin-bottom: 40px;
