@@ -1,0 +1,149 @@
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* background: linear-gradient(to bottom, #e46cff, #73068c); */
+    background-color: #AC52D9;
+    background-repeat: no-repeat;
+    /* min-height: 100vh; */
+}
+
+/* --- Header --- */
+.header {
+    background: linear-gradient(to right, #8733ac, #d756ee);
+    width: 100%;
+}
+
+.header-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 1800px;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.texto-logo {
+    font-size: 24px;
+    color: white;
+}
+
+.nav a {
+    font-size: 18px;
+    color: white;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #560277;
+}
+
+/* --- Layout Principal --- */
+.bg-onda {
+    background-image: url("../img/bg/bg-section1.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.conteiner-principal {
+    max-width: 1800px;
+    height: 700px;
+    padding: 60px 20px;
+    display: flex;
+    margin: 0 10px 0 100px;
+    flex-direction: column;
+}
+
+.textos-topo {
+    color: white;
+}
+
+
+.conteudo-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.quadros {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.coluna-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quadro-direito,
+.quadro-esquerdo {
+    background-color: white;
+    height: 300px;
+    width: 370px;
+    border-radius: 35px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-quadro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.titulo-quadro h3 {
+    color: #560277;
+    font-size: 22px;
+}
+
+
+.imagem {
+    width: 450px;
+    height: auto;
+    margin-right: 200px;
+    margin-top: -100px;
+}
+
+.botao {
+    background: linear-gradient(#73068c, #e46cff);
+    border-radius: 15px;
+    border: solid 1px white;
+    padding: 12px 40px;
+    margin-top: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
