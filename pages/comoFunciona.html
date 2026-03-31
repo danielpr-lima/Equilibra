@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilíbra – Como Funciona</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../img/Group.svg">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/utils.css">
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img">
+      Equilíbra
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="diario.html">Diário</a></li>    
+      <li><a href="reflexoes.html">Reflexões</a></li>
+      <li><a href="projeto.html">Sobre o projeto</a></li>
+      <li><a href="comoFunciona.html" class="active">Como funciona</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span id="themeLabel">Modo noturno</span>
+      </button>
+      <a href="login.html" class="btn-entrar">Entrar</a>
+      <button class="hamburger-nav" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-placeholder">
+    <h2>Como Funciona</h2>
+    <p>Registre seus gastos e receitas diariamente, defina metas financeiras e escreva reflexões sobre sua relação com o dinheiro. O Equilíbra organiza tudo em um só lugar, de forma simples e visual.</p>
+    <a href="login.html" class="btn-hero">Começar agora</a>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <div class="flogo">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img">
+        Equilíbra
+      </div>
+      <p class="fdesc">Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir sobre suas finanças.</p>
+      <span class="ftag">Projeto acadêmico</span>
+    </div>
+    <div class="fcol">
+      <h5>Equilíbra</h5>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="diario.html">Diário</a></li>       
+        <li><a href="reflexoes.html">Reflexões</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Ajuda</h5>
+      <ul>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="#">Suporte</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Saiba mais</h5>
+      <ul>
+        <li><a href="projeto.html">Sobre o projeto</a></li>
+        <li><a href="comoFunciona.html">Como funciona</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="fbot">© 2026 Equilíbra – Projeto acadêmico</div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/nav-hamburger.js"></script>
+</body>
+</html>

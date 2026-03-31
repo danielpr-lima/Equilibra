@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilíbra – Entrar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../img/Group.svg">
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/utils.css">
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img">
+      Equilíbra
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="diario.html">Diário</a></li>
+      <li><a href="reflexoes.html">Reflexões</a></li>
+      <li><a href="projeto.html">Sobre o projeto</a></li>
+      <li><a href="comoFunciona.html">Como funciona</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span id="themeLabel">Modo noturno</span>
+      </button>
+      <button class="hamburger-nav" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="a-login">
+    <div class="av-wrap">
+      <div class="av" aria-hidden="true">
+        <img src="../img/login.svg" alt="Ilustração de login" class="login-illustration">
+      </div>
+      <p class="av-name">Bem-vinda de volta!</p>
+    </div>
+    <form class="login-form" id="loginForm" action="#" novalidate>
+      <div>
+        <label for="username">Nome de usuário</label>
+        <input type="text" id="username" name="username" placeholder="Seu nome de usuário" autocomplete="username"  required aria-required="true">
+      </div>
+      <div>
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" placeholder="Sua senha" autocomplete="current-password" required aria-required="true">
+      </div>
+      <p class="login-error" id="loginError" role="alert" aria-live="polite"></p>
+      <button type="submit" class="btn-login">Entrar</button>
+      <button type="button" class="fgt" id="forgotBtn">Esqueceu a senha? Clique aqui</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <div class="flogo">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" width="20" height="20">
+        Equilíbra
+      </div>
+      <p class="fdesc">Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir sobre suas finanças.</p>
+      <span class="ftag">Projeto acadêmico</span>
+    </div>
+    <div class="fcol">
+      <h5>Equilíbra</h5>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="reflexoes.html">Reflexões</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Ajuda</h5>
+      <ul>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="#">Suporte</a></li>
+        <li><a href="#">Termos de uso</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Saiba mais</h5>
+      <ul>
+        <li><a href="projeto.html">Sobre o projeto</a></li>
+        <li><a href="comoFunciona.html">Como funciona</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="fbot">© 2026 Equilíbra – Projeto acadêmico</div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/login.js"></script>
+  <script src="../js/nav-hamburger.js"></script>
+</body>
+</html>

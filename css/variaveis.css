@@ -1,0 +1,76 @@
+:root {
+  --bg-main:         #f9f0ff;
+  --bg-card:         #ffffff;
+  --bg-hero:         #b700ff;
+  --bg-s2:           #681299;
+  --bg-feat:         #EBC3FF;
+  --bg-footer:       #390e51;
+
+  --text-h:  #390E51;
+  --text-b:  #390e51;
+  --text-m:  #390e51;
+
+  --accent:       #b700ff;
+  --accent2:      #ff00e5;
+  --accent-soft:  #ecb9fa;
+
+  --nav-bg:  rgb(236, 185, 250, 0.95);
+  --nav-brd: rgba(183, 0, 255, 0.2);
+  --nav-text: #000000;
+  --nav-text-active: #ffffff;
+
+  --pill-bg:   #ecb9fa;
+  --pill-text: #681299;
+
+  --inp-bg:  #f9f0ff;
+  --inp-brd: #d997ff;
+
+  --tbl-h:  #b700ff;
+  --tbl-r:  #f9f0ff;
+  --tbl-ra: #ecb9fa;
+
+  --prg-bg:   #ebc3ff;
+  --prg-fill: #b700ff;
+
+  --mood-bg: #ecb9fa; 
+  --shadow:  0 4px 20px rgba(183, 0, 255, 0.12);
+}
+
+[data-theme="dark"] {
+
+  --bg-main:   #1a0030; 
+  --bg-card:   #2a0044;
+  --bg-hero:   #390e51;
+  --bg-s2:     #681299;
+  --bg-feat:   #390e51;
+  --bg-footer: #1a0030;
+
+  --text-h: #ebc3ff;
+  --text-b: #d997ff;
+  --text-m: #eb6cff;
+
+  --accent:      #eb6cff;
+  --accent2:     #ff00e5;
+  --accent-soft: #390e51;
+
+  --nav-bg:  rgba(26, 0, 48, 0.97);
+  --nav-brd: rgba(235, 108, 255, 0.25);
+  --nav-text: #ffffffff;
+  --nav-text-active: #390e51;
+
+  --pill-bg:   #390e51;
+  --pill-text: #d997ff;
+
+  --inp-bg:  #2a0044;
+  --inp-brd: #681299;
+
+  --tbl-h:  #681299;
+  --tbl-r:  #2a0044;
+  --tbl-ra: #390e51;
+
+  --prg-bg:   #390551;
+  --prg-fill: #eb6cff;
+
+  --mood-bg: #2a0044; 
+  --shadow:  0 4px 24px rgba(0, 0, 0, 0.45);
+}

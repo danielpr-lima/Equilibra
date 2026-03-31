@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilíbra – Reflexões</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../img/Group.svg">
+
+  <link rel="stylesheet" href="../css/variaveis.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="../css/utils.css">
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="../index.html">
+      <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img">
+      Equilíbra
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="diario.html">Diário</a></li> 
+      <li><a href="reflexoes.html" class="active">Reflexões</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+        <span id="themeLabel">Modo noturno</span>
+      </button>
+      <a href="login.html" class="btn-entrar">Perfil</a>
+      <button class="hamburger-nav" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="a-diary">
+    <h3>Nos conta como foi o seu dia hoje.</h3>
+    <label for="reflexaoTexto" class="sr-only">Escreva sua reflexão financeira do dia</label>
+    <textarea
+      id="reflexaoTexto"
+      class="dbox"
+      placeholder="Escreva aqui sobre suas finanças hoje... Como você se sentiu? Tomou alguma boa decisão? Algo que gostaria de melhorar?"
+    ></textarea>
+    <div class="diary-actions">
+      <button type="button" class="btn-ow">Salvar reflexão</button>
+    </div>
+  </section>
+
+  <section class="a-reflexoes-prev">
+    <h3>Reflexões anteriores</h3>
+    <div class="reflexoes-list">
+      <article class="reflexao-card">
+        <div class="reflexao-header">
+          <span class="reflexao-data">23/03/2026</span>
+          <span class="reflexao-humor">😌 Tranquilo</span>
+        </div>
+        <p class="reflexao-texto">
+          Hoje consegui resistir à tentação de comprar algo por impulso. Me sinto orgulhosa de mim mesma. Cada pequena vitória conta!
+        </p>
+      </article>
+
+      <article class="reflexao-card">
+        <div class="reflexao-header">
+          <span class="reflexao-data">20/03/2026</span>
+          <span class="reflexao-humor">😔 Preocupado</span>
+        </div>
+        <p class="reflexao-texto">
+          Gastei mais do que planejava esta semana. Preciso revisar meu orçamento e entender onde estou escorregando.
+        </p>
+      </article>
+
+      <article class="reflexao-card">
+        <div class="reflexao-header">
+          <span class="reflexao-data">15/03/2026</span>
+          <span class="reflexao-humor">😌 Equilibrado</span>
+        </div>
+        <p class="reflexao-texto">
+          Fechei a semana dentro do planejado. Sinto que estou evoluindo no meu relacionamento com o dinheiro.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">
+      <div class="flogo">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" width="20" height="20">
+        Equilíbra
+      </div>
+      <p class="fdesc">Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir sobre suas finanças.</p>
+      <span class="ftag">Projeto acadêmico</span>
+    </div>
+    <div class="fcol">
+      <h5>Equilíbra</h5>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="reflexoes.html">Reflexões</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Ajuda</h5>
+      <ul>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="#">Suporte</a></li>
+        <li><a href="#">Termos de uso</a></li>
+        <li><a href="#">Política de privacidade</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Saiba mais</h5>
+      <ul>
+        <li><a href="projeto.html">Sobre o projeto</a></li>
+        <li><a href="comoFunciona.html">Como funciona</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="fbot">© 2026 Equilíbra – Projeto acadêmico</div>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/reflexoes.js"></script>
+  <script src="../js/nav-hamburger.js"></script>
+</body>
+</html>
