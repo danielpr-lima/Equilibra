@@ -1,7 +1,6 @@
 'use strict';
 
 /**
- * Carrega dados do localStorage ou retorna valor padrão.
  * @param {string} key
  * @param {*} fallback
  */
@@ -124,7 +123,6 @@ function renderGastos() {
   }
 
   empty.style.display = 'none';
-  // Exibe os 10 mais recentes
   const recentes = [...state.gastos].reverse().slice(0, 10);
 
   list.innerHTML = recentes.map(g => `
@@ -139,13 +137,11 @@ function renderGastos() {
     </div>
   `).join('');
 
-  // Delegação de evento para deletar
   list.querySelectorAll('.expense-del').forEach(btn => {
     btn.addEventListener('click', () => deleteGasto(Number(btn.dataset.id)));
   });
 }
 
-// Adiciona novo gasto.
 function addGasto(gasto) {
   state.gastos.push({ ...gasto, id: state.nextGastoId++ });
   persistAll();
@@ -156,7 +152,6 @@ function addGasto(gasto) {
   toast('✅ Gasto registrado!');
 }
 
-// Remove gasto por ID.
 function deleteGasto(id) {
   state.gastos = state.gastos.filter(g => g.id !== id);
   persistAll();
@@ -167,11 +162,9 @@ function deleteGasto(id) {
   toast('🗑️ Gasto removido.');
 }
 
-// Inicia formulário de gastos.
 function initGastoForm() {
   const form = document.getElementById('gastoForm');
 
-  // Define data padrão como hoje
   const dataInput = document.getElementById('gastoData');
   dataInput.value = new Date().toISOString().split('T')[0];
 
@@ -193,13 +186,11 @@ function initGastoForm() {
     dataInput.value = new Date().toISOString().split('T')[0];
   });
 
-  // Botão "Ver gráfico" faz scroll suave
   document.getElementById('btnVerGrafico').addEventListener('click', () => {
     document.getElementById('grafico').scrollIntoView({ behavior: 'smooth' });
   });
 }
-   
-// Renderiza lista de metas.
+  
 function renderMetas() {
   const list  = document.getElementById('metasList');
   const empty = document.getElementById('metasEmpty');
@@ -235,7 +226,6 @@ function renderMetas() {
   });
 }
 
-// Remove meta por ID.
 function deleteMeta(id) {
   state.metas = state.metas.filter(m => m.id !== id);
   persistAll();
@@ -243,7 +233,6 @@ function deleteMeta(id) {
   toast('🗑️ Meta removida.');
 }
 
-// Inicia formulário de metas.
 function initMetaForm() {
   const form      = document.getElementById('metaForm');
   const rangeEl   = document.getElementById('metaProgresso');
@@ -275,7 +264,6 @@ function initMetaForm() {
   });
 }
 
-// Gera semanas do mês atual.
 function gerarSemanas() {
   const hoje = new Date();
   const semanaAtual = Math.ceil(hoje.getDate() / 7);
@@ -286,7 +274,6 @@ function gerarSemanas() {
   }));
 }
 
-// Calcula gastos de uma semana específica do mês atual.
 function calcularGastoSemana(semana) {
   const hoje = new Date();
   const ano  = hoje.getFullYear();
@@ -309,7 +296,6 @@ function gerarInsight() {
   const total = totalGastosMesAtual();
   if (state.gastos.length === 0) return 'Registre seus gastos para ver insights personalizados.';
 
-  // Categoria que mais gastou
   const porCat = {};
   state.gastos.forEach(g => {
     porCat[g.categoria] = (porCat[g.categoria] || 0) + g.valor;
@@ -332,7 +318,6 @@ function updatePlanejamento() {
   document.getElementById('planSaldo').textContent  = formatBRL(Math.max(0, saldo));
   document.getElementById('planEconomia').textContent = formatBRL(Math.max(0, saldo * 0.2));
 
-  // Variações
   const gastosChange = document.getElementById('planGastosChange');
   const pct = state.renda > 0 ? Math.round((totalMes / state.renda) * 100) : 0;
   gastosChange.textContent = `${pct}% da renda`;
@@ -342,7 +327,6 @@ function updatePlanejamento() {
   saldoChange.textContent = saldo >= 0 ? 'no positivo ✓' : 'negativo ⚠️';
   saldoChange.className = 'stat-change ' + (saldo >= 0 ? 'positive' : 'negative');
 
-  // Grid semanal
   const semanas = gerarSemanas();
   const weeklyGrid = document.getElementById('weeklyGrid');
   weeklyGrid.innerHTML = semanas.map(s => `
@@ -352,10 +336,8 @@ function updatePlanejamento() {
     </div>
   `).join('');
 
-  // Insight
   document.getElementById('insightText').textContent = gerarInsight();
 
-  // Barra de limite
   const limitBarWrap = document.getElementById('limitBarWrap');
   if (state.limite > 0) {
     limitBarWrap.style.display = 'block';
@@ -372,7 +354,6 @@ function updatePlanejamento() {
 function initPlanejamentoForm() {
   const form = document.getElementById('rendaForm');
 
-  // Preenche valores salvos
   if (state.renda)  document.getElementById('rendaValor').value  = state.renda;
   if (state.limite) document.getElementById('limiteMensal').value = state.limite;
 
@@ -569,7 +550,6 @@ function initEmocional() {
   const btns  = document.querySelectorAll('.mood-btn');
   const form  = document.getElementById('emocionalForm');
 
-  // Seleção de mood
   btns.forEach(btn => {
     btn.addEventListener('click', () => {
       btns.forEach(b => b.classList.remove('active'));
@@ -602,13 +582,11 @@ function initEmocional() {
     updateGraficos();
     toast('🧠 Registro emocional salvo!');
 
-    // Reset
     form.reset();
     btns.forEach(b => b.classList.remove('active'));
     state.selectedMood = null;
   });
 
-  // Botão na seção de gráficos que redireciona para emocional
   document.getElementById('btnRegistrarSentimento').addEventListener('click', () => {
     document.getElementById('emocional').scrollIntoView({ behavior: 'smooth' });
   });
@@ -617,22 +595,18 @@ function initEmocional() {
 function analisarPadroes() {
   const total = state.gastos.reduce((s, g) => s + g.valor, 0);
 
-  // Padrão: compras por impulso
   const impulsivo = state.gastos
     .filter(g => ['lazer', 'outros', 'vestuario'].includes(g.categoria))
     .reduce((s, g) => s + g.valor, 0);
   const pctImpulso = total > 0 ? Math.round((impulsivo / total) * 100) : 0;
 
-  // Padrão: economia planejada
   const gastosMes   = totalGastosMesAtual();
   const pctPlanej   = state.renda > 0 ? Math.round(((state.renda - gastosMes) / state.renda) * 100) : 50;
   const economiaPct = Math.max(0, Math.min(100, pctPlanej));
 
-  // Padrão: alimentação elevada
   const alim = state.gastos.filter(g => g.categoria === 'alimentacao').reduce((s, g) => s + g.valor, 0);
   const pctAlim = total > 0 ? Math.round((alim / total) * 100) : 0;
 
-  // Padrão: saúde em dia
   const saude = state.gastos.filter(g => g.categoria === 'saude').reduce((s, g) => s + g.valor, 0);
   const pctSaude = total > 0 ? Math.round((saude / total) * 100) : 0;
 
@@ -678,7 +652,6 @@ function gerarInsights() {
     return [{ icon: '💡', texto: 'Registre seus gastos para ver insights personalizados.' }];
   }
 
-  // Maior categoria
   const porCat = {};
   state.gastos.forEach(g => {
     porCat[g.categoria] = (porCat[g.categoria] || 0) + g.valor;
@@ -689,7 +662,6 @@ function gerarInsights() {
     insights.push({ icon: '📊', texto: `Você gastou ${pct}% do total em ${CAT_LABEL[topCat[0]] || topCat[0]}.` });
   }
 
-  // Comparação com renda
   if (state.renda > 0 && totalMes > 0) {
     const pctRenda = Math.round((totalMes / state.renda) * 100);
     if (pctRenda > 80) {
@@ -699,13 +671,11 @@ function gerarInsights() {
     }
   }
 
-  // Metas próximas
   const metaQuase = state.metas.find(m => m.progresso >= 85);
   if (metaQuase) {
     insights.push({ icon: '🎯', texto: `Sua meta "${metaQuase.nome}" está quase completa (${metaQuase.progresso}%)!` });
   }
 
-  // Humor recorrente
   if (state.emocional.length >= 2) {
     const ultimos = state.emocional.slice(-3);
     const negativos = ultimos.filter(e => ['ansioso', 'mal', 'exagero'].includes(e.mood));
@@ -725,7 +695,6 @@ function updatePadroes() {
   const padroes  = analisarPadroes();
   const insights = gerarInsights();
 
-  // Padrões grid
   const grid = document.getElementById('padroesGrid');
   grid.innerHTML = padroes.map(p => `
     <div class="padrao-card">
@@ -738,7 +707,6 @@ function updatePadroes() {
     </div>
   `).join('');
 
-  // Insights list
   document.getElementById('insightsList').innerHTML = insights.map(i => `
     <div class="insight-item">
       <span class="insight-item-icon">${i.icon}</span>
@@ -746,7 +714,6 @@ function updatePadroes() {
     </div>
   `).join('');
 
-  // Rank de categorias
   const porCat = {};
   state.gastos.forEach(g => {
     porCat[g.categoria] = (porCat[g.categoria] || 0) + g.valor;
@@ -784,14 +751,12 @@ function initNavHighlight() {
 
   sections.forEach(s => observer.observe(s));
 
-  // Clique nos links faz scroll suave
   navLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const target = document.getElementById(link.dataset.section);
       if (target) target.scrollIntoView({ behavior: 'smooth' });
 
-      // Fecha menu mobile
       document.getElementById('navLinks').classList.remove('open');
     });
   });
@@ -825,34 +790,26 @@ function initModal() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Gastos
   initGastoForm();
   renderGastos();
 
-  // Metas
   initMetaForm();
   renderMetas();
 
-  // Planejamento
   initPlanejamentoForm();
   updatePlanejamento();
 
-  // Gráficos
   updateGraficos();
 
-  // Emocional
   initEmocional();
   renderEmocional();
 
-  // Padrões
   updatePadroes();
 
-  // UI
   initNavHighlight();
   initHamburger();
   initModal();
 
-  // Stagger de animação das seções
   document.querySelectorAll('.section').forEach((s, i) => {
     s.style.animationDelay = `${i * 0.08}s`;
   });

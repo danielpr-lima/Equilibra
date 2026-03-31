@@ -1,9 +1,3 @@
-/**
- * login.js – Equilíbra
- * Lógica de validação e submissão do formulário de login.
- * Separa o comportamento do HTML (sem onclick inline).
- */
-
 (function () {
   'use strict';
 
@@ -14,7 +8,6 @@
   if (!form) return;
 
   /**
-   * Exibe mensagem de erro de validação.
    * @param {string} msg
    */
   function showError(msg) {
@@ -22,18 +15,11 @@
     errorEl.style.display = 'block';
   }
 
-  /**
-   * Esconde mensagem de erro.
-   */
   function hideError() {
     errorEl.textContent = '';
     errorEl.style.display = 'none';
   }
 
-  /**
-   * Validação básica do formulário.
-   * Retorna true se válido, false caso contrário.
-   */
   function validateForm(username, password) {
     if (!username.trim()) {
       showError('Por favor, informe seu nome de usuário.');
@@ -50,7 +36,6 @@
     return true;
   }
 
-  /* Submissão do formulário */
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     hideError();
@@ -67,7 +52,6 @@
     window.location.href = '../index.html';
   });
 
-  /* Botão "Esqueci a senha" */
   if (forgotBtn) {
     forgotBtn.addEventListener('click', function () {
       alert('Funcionalidade de recuperação de senha em desenvolvimento.');

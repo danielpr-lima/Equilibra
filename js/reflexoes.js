@@ -1,12 +1,5 @@
-/**
- * reflexoes.js – Equilíbra
- * Persiste reflexões do usuário no localStorage e renderiza os cards.
- * Conecta-se à página reflexoes.html de forma não-intrusiva.
- */
-
 'use strict';
 
-/* ── Utilitários de armazenamento (mesmo prefixo do script.js) ── */
 function _reflexLoad() {
   try {
     const raw = localStorage.getItem('equilibra_reflexoes');
@@ -20,14 +13,12 @@ function _reflexSave(list) {
   } catch { /* silencioso */ }
 }
 
-/* ── Formata data ISO para DD/MM/AAAA ── */
 function _fmtDate(iso) {
   if (!iso) return '';
   const [y, m, d] = iso.split('-');
   return `${d}/${m}/${y}`;
 }
 
-/* ── Renderiza lista de reflexões ── */
 function renderReflexoes(list) {
   const container = document.querySelector('.reflexoes-list');
   if (!container) return;
@@ -37,7 +28,6 @@ function renderReflexoes(list) {
     return;
   }
 
-  /* Mostra as 10 mais recentes */
   const recentes = [...list].reverse().slice(0, 10);
 
   container.innerHTML = recentes.map(r => `
@@ -51,22 +41,19 @@ function renderReflexoes(list) {
   `).join('');
 }
 
-/* ── Init ── */
 document.addEventListener('DOMContentLoaded', function () {
   const textarea   = document.getElementById('reflexaoTexto');
   const saveBtn    = document.querySelector('.diary-actions .btn-ow');
 
   if (!textarea || !saveBtn) return;
 
-  /* Carrega e exibe reflexões existentes */
   let reflexoes = _reflexLoad();
   renderReflexoes(reflexoes);
 
-  /* Salva ao clicar no botão */
   saveBtn.addEventListener('click', function () {
     const texto = textarea.value.trim();
     if (!texto) {
-      /* Feedback visual simples */
+    
       textarea.style.borderColor = '#ef4444';
       textarea.placeholder = '⚠️ Escreva algo antes de salvar...';
       setTimeout(() => {
@@ -87,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
     _reflexSave(reflexoes);
     renderReflexoes(reflexoes);
 
-    /* Reset e feedback */
     textarea.value = '';
     saveBtn.textContent = '✅ Salvo!';
     setTimeout(() => { saveBtn.textContent = 'Salvar reflexão'; }, 2000);
