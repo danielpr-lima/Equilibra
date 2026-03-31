@@ -1,4 +1,4 @@
-.container{
+.footer-container{
     background-color: #4D2262; /* cor de fundo */
 }
 
@@ -34,7 +34,6 @@ footer {
 /* Titulos das divisoes*/
 .footer-col h4 { 
     margin-bottom: 20px; /*  define um espaçamento externo inferior de 20 pixels.*/
-    font-size: 2rem; /*  tamanho de fonte */
     font-size: 0.85rem; /* tamanho de fonte menor que o padrão */
     margin-bottom: 12px;  /* uma margem menor, geralmente usada para separar itens de uma lista ou um subtítulo do conteúdo principal. */
     display: flex; /* transforma o elemento em um container flexível. */

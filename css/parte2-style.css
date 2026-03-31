@@ -6,14 +6,14 @@
     background-size: contain;
 }
 .conteiner-parte2{
-    max-width: 1800px;
+    max-width: 1700px;
     height: 580px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 60px 20px;
-    margin: 0 0 0 100px;    
+    margin: 0 auto;    
 }
 .conteudo-esquerda{
     height: 460px;
