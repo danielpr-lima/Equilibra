@@ -1,13 +1,6 @@
-/**
- * mood.js – Equilíbra
- * Lógica de interação das pills de humor e emojis no Diário.
- * Separado do HTML (sem onclick inline).
- */
-
 (function () {
   'use strict';
 
-  /* ---- Pills de humor ---- */
   const pills = document.querySelectorAll('.mpill');
 
   pills.forEach(function (pill) {
@@ -19,7 +12,6 @@
     });
   });
 
-  /* ---- Emojis de mood ---- */
   const mimgs = document.querySelectorAll('.mimg');
 
   mimgs.forEach(function (mimg) {

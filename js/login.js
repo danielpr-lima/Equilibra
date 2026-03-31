@@ -45,10 +45,6 @@
 
     if (!validateForm(username, password)) return;
 
-    /*
-     * Aqui entraria a chamada real de autenticação (API/backend).
-     * CORRIGIDO: redireciona para a página Início após login bem-sucedido.
-     */
     window.location.href = '../index.html';
   });
 

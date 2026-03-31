@@ -642,7 +642,6 @@ function analisarPadroes() {
   ];
 }
 
-/** Gera insights automáticos. */
 function gerarInsights() {
   const insights = [];
   const total    = state.gastos.reduce((s, g) => s + g.valor, 0);
@@ -771,7 +770,6 @@ function initHamburger() {
   });
 }
 
-/** Modal genérico. */
 function openModal(html) {
   document.getElementById('modalContent').innerHTML = html;
   document.getElementById('modalOverlay').classList.add('open');

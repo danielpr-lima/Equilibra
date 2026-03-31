@@ -13,7 +13,6 @@
       hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    /* Fecha o menu ao clicar em qualquer link */
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
@@ -22,7 +21,6 @@
       });
     });
 
-    /* Fecha ao clicar fora */
     document.addEventListener('click', function (e) {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
