@@ -1,3 +1,4 @@
+// Script para controlar o comportamento do menu hambúrguer na navegação, permitindo que os usuários abram e fechem o menu em dispositivos móveis. O script também fecha o menu quando um link é clicado ou quando o usuário clica fora do menu.
 (function () {
   'use strict';
 

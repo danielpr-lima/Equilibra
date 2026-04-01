@@ -1,5 +1,6 @@
 'use strict';
 
+// Funções auxiliares para carregar e salvar reflexões no localStorage, formatar datas e renderizar a lista de reflexões na interface.
 function _reflexLoad() {
   try {
     const raw = localStorage.getItem('equilibra_reflexoes');
@@ -7,18 +8,21 @@ function _reflexLoad() {
   } catch { return []; }
 }
 
+// Salva a lista de reflexões no localStorage, convertendo-a para uma string JSON. A função é envolvida em um bloco try-catch para evitar erros caso o armazenamento falhe.
 function _reflexSave(list) {
   try {
     localStorage.setItem('equilibra_reflexoes', JSON.stringify(list));
   } catch { /* silencioso */ }
 }
 
+// Formata uma data no formato ISO (YYYY-MM-DD) para o formato brasileiro (DD/MM/YYYY). Se a string de entrada for inválida ou vazia, retorna uma string vazia.
 function _fmtDate(iso) {
   if (!iso) return '';
   const [y, m, d] = iso.split('-');
   return `${d}/${m}/${y}`;
 }
 
+// Renderiza a lista de reflexões na interface, exibindo as reflexões mais recentes primeiro. Se a lista estiver vazia, exibe uma mensagem indicando que nenhuma reflexão foi registrada. Cada reflexão é exibida em um cartão com a data, humor e texto da reflexão.
 function renderReflexoes(list) {
   const container = document.querySelector('.reflexoes-list');
   if (!container) return;
@@ -41,6 +45,7 @@ function renderReflexoes(list) {
   `).join('');
 }
 
+// Configura o formulário de reflexões, permitindo que o usuário escreva e salve suas reflexões diárias. 
 document.addEventListener('DOMContentLoaded', function () {
   const textarea   = document.getElementById('reflexaoTexto');
   const saveBtn    = document.querySelector('.diary-actions .btn-ow');

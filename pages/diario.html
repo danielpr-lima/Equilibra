@@ -7,36 +7,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../img/Group.svg">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Chart.js para gráficos -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
   <link rel="stylesheet" href="../css/variaveis.css">
   <link rel="stylesheet" href="../css/diario.css">
   <link rel="stylesheet" href="../css/nav.css">
 </head>
 <body>
-  <nav class="navbar" id="navbar">
+
+  <nav>
     <a class="nav-logo" href="../index.html">
       <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img">
       Equilíbra
     </a>
-    <ul class="nav-links" id="navLinks">
-       <li><a href="../index.html">Início</a></li>
-      <li><a href="#gastos"       class="nav-link active" data-section="gastos">Gastos</a></li>
-      <li><a href="#metas"        class="nav-link"        data-section="metas">Metas</a></li>
-      <li><a href="#planejamento" class="nav-link"        data-section="planejamento">Planejamento</a></li>
-      <li><a href="#grafico"      class="nav-link"        data-section="grafico">Gráfico</a></li>
-      <li><a href="#emocional"    class="nav-link"        data-section="emocional">Emocional</a></li>
-      <li><a href="#padroes"      class="nav-link"        data-section="padroes">Padrões</a></li>
+
+    <ul class="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="diario.html" class="active">Diário</a></li>
+      <li><a href="reflexoes.html">Reflexões</a></li>
+      <li><a href="projeto.html">Sobre o projeto</a></li>
+      <li><a href="comoFunciona.html">Como funciona</a></li>
+      <li><a href="contato.html">Contato</a></li>
     </ul>
+    <!-- Botões de tema e login -->
     <div class="nav-right">
-      <button class="btn-theme" id="themeBtn" aria-label="Alternar tema">
+      <button class="btn-theme" id="themeBtn" onclick="toggleTheme()" aria-label="Alternar tema">
         <span id="themeIcon" aria-hidden="true">🌙</span>
         <span id="themeLabel">Modo noturno</span>
       </button>
-      <div class="avatar-chip">
-        <span class="avatar-icon">🧑‍💻</span>
-        <span class="avatar-name">Usuário</span>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <a href="login.html" class="btn-entrar">Entrar</a>
+      <button class="hamburger-nav" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -51,6 +53,7 @@
           <p class="section-sub">Registre e acompanhe seus gastos pessoais</p>
         </div>
       </div>
+
       <div class="grid-2">
         <div class="card card-glass">
           <h3 class="card-title">Registrar Gasto</h3>
@@ -59,6 +62,7 @@
               <label for="gastoNome">Nome do gasto</label>
               <input type="text" id="gastoNome" placeholder="Ex: Mercado, Uber..." required>
             </div>
+
             <div class="field-group">
               <label for="gastoCategoria">Categoria</label>
               <select id="gastoCategoria">
@@ -72,6 +76,7 @@
                 <option value="outros">📦 Outros</option>
               </select>
             </div>
+
             <div class="field-row">
               <div class="field-group">
                 <label for="gastoValor">Valor (R$)</label>
@@ -82,10 +87,12 @@
                 <input type="date" id="gastoData" required>
               </div>
             </div>
+
             <div class="field-group">
               <label for="gastoDesc">Como você se sentiu após essa compra?</label>
               <textarea id="gastoDesc" rows="2" placeholder="Opcional..."></textarea>
             </div>
+
             <div class="form-actions">
               <button type="submit" class="btn btn-primary">
                 <span>Registrar</span>
@@ -93,6 +100,7 @@
               </button>
               <button type="button" class="btn btn-outline" id="btnVerGrafico">Ver gráfico</button>
             </div>
+
           </form>
         </div>
         <div class="card card-glass">
@@ -114,6 +122,7 @@
           <p class="section-sub">Defina objetivos e acompanhe sua evolução</p>
         </div>
       </div>
+
       <div class="grid-2">
         <div class="card card-glass">
           <div class="card-header-row">
@@ -122,6 +131,7 @@
           <div class="metas-list" id="metasList"></div>
           <p class="empty-state" id="metasEmpty" style="display:none">Nenhuma meta cadastrada.</p>
         </div>
+
         <div class="card card-glass">
           <h3 class="card-title">Nova Meta</h3>
           <form class="form-stack" id="metaForm">
@@ -158,28 +168,33 @@
           <p class="section-sub">Visão geral do seu orçamento mensal</p>
         </div>
       </div>
+
       <div class="grid-4" id="planCards">
         <div class="card card-stat">
           <span class="stat-label">Renda Mensal</span>
           <span class="stat-value" id="planRenda">R$ 3.500</span>
           <span class="stat-change positive">↑ configurável</span>
         </div>
+
         <div class="card card-stat card-stat-accent">
           <span class="stat-label">Gastos do Mês</span>
           <span class="stat-value" id="planGastos">R$ 0</span>
           <span class="stat-change" id="planGastosChange">—</span>
         </div>
+
         <div class="card card-stat">
           <span class="stat-label">Saldo Disponível</span>
           <span class="stat-value" id="planSaldo">R$ 3.500</span>
           <span class="stat-change" id="planSaldoChange">—</span>
         </div>
+
         <div class="card card-stat">
           <span class="stat-label">Economias</span>
           <span class="stat-value" id="planEconomia">R$ 0</span>
           <span class="stat-change positive">meta do mês</span>
         </div>
       </div>
+
       <div class="grid-2" style="margin-top:20px">
         <div class="card card-glass">
           <h3 class="card-title">Planejamento Semanal</h3>
@@ -189,6 +204,7 @@
             <span id="insightText">Carregando insight...</span>
           </div>
         </div>
+
         <div class="card card-glass">
           <h3 class="card-title">Definir Renda Mensal</h3>
           <form class="form-stack" id="rendaForm">
@@ -226,6 +242,7 @@
           <p class="section-sub">Visualize seus últimos gastos por categoria</p>
         </div>
       </div>
+
       <div class="grid-2">
         <div class="card card-glass chart-card">
           <h3 class="card-title">Seus últimos gastos</h3>
@@ -233,6 +250,7 @@
             <canvas id="pieChart"></canvas>
           </div>
         </div>
+
         <div class="card card-glass chart-card">
           <h3 class="card-title">Como você está se sentindo?</h3>
           <div class="chart-wrap">
@@ -253,6 +271,7 @@
           <p class="section-sub">Como suas emoções impactam suas finanças?</p>
         </div>
       </div>
+
       <div class="grid-2">
         <div class="card card-glass">
           <h3 class="card-title">Como você está se sentindo?</h3>
@@ -289,6 +308,7 @@
           <p class="section-sub">Seus hábitos financeiros identificados</p>
         </div>
       </div>
+      
       <div class="grid-2">
         <div class="card card-glass">
           <h3 class="card-title">Seus padrões comportamentais</h3>

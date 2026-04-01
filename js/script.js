@@ -1,9 +1,12 @@
 'use strict';
 
 /**
+ * Funções de persistência e formatação.
  * @param {string} key
  * @param {*} fallback
  */
+
+// Carrega um estado do localStorage, ou retorna um valor padrão se não existir ou em caso de erro.
 function loadState(key, fallback) {
   try {
     const saved = localStorage.getItem('equilibra_' + key);
@@ -11,14 +14,16 @@ function loadState(key, fallback) {
   } catch {
     return fallback;
   }
-}
+};
 
+// Salva um estado no localStorage, ignorando erros (ex: quota excedida).
 function saveState(key, value) {
   try {
     localStorage.setItem('equilibra_' + key, JSON.stringify(value));
   } catch { /* silencioso */ }
-}
+};
 
+// Formata um valor numérico como moeda brasileira.
 const MOCK_GASTOS = [
   { id: 1, nome: 'Mercado',     categoria: 'alimentacao', valor: 145.80, data: '2026-03-20', desc: '' },
   { id: 2, nome: 'Uber',        categoria: 'transporte',  valor: 28.50,  data: '2026-03-22', desc: '' },
@@ -27,17 +32,20 @@ const MOCK_GASTOS = [
   { id: 5, nome: 'Streaming',   categoria: 'lazer',       valor: 39.90,  data: '2026-03-26', desc: '' },
 ];
 
+// Formata uma data ISO (YYYY-MM-DD) para o formato brasileiro (DD/MM/YYYY).
 const MOCK_METAS = [
   { id: 1, nome: 'Reserva de emergência', valor: 10000, progresso: 72, prazo: '2026-12' },
   { id: 2, nome: 'Viagem nas férias',     valor: 4000,  progresso: 40, prazo: '2026-07' },
   { id: 3, nome: 'Notebook novo',         valor: 3500,  progresso: 88, prazo: '2026-05' },
 ];
 
+// Mock de registros emocionais para demonstrar a funcionalidade de humor no Diário. Cada registro tem data, tipo de humor, emoji, rótulo e texto opcional.
 const MOCK_EMOCIONAL = [
   { id: 1, data: '2026-03-23', mood: 'otimo',   emoji: '😌', rotulo: 'Ótimo',   texto: 'Consegui resistir à tentação de comprar algo por impulso. Cada vitória conta!' },
   { id: 2, data: '2026-03-20', mood: 'ansioso', emoji: '😰', rotulo: 'Ansioso', texto: 'Gastei mais do que planejava esta semana. Preciso revisar meu orçamento.' },
 ];
 
+// Estado global da aplicação, carregado do localStorage ou inicializado com valores padrão. Contém gastos, metas, registros emocionais, renda, limite e IDs para novos registros.
 const state = {
   gastos:     loadState('gastos',     MOCK_GASTOS),
   metas:      loadState('metas',      MOCK_METAS),
@@ -50,6 +58,7 @@ const state = {
   selectedMood: null,
 };
 
+// Salva todo o estado atual no localStorage. Deve ser chamado após qualquer modificação para garantir persistência.
 function persistAll() {
   saveState('gastos',      state.gastos);
   saveState('metas',       state.metas);
@@ -61,6 +70,7 @@ function persistAll() {
   saveState('nextEmocId',  state.nextEmocId);
 }
 
+// Carrega as reflexões do localStorage, retornando um array vazio em caso de erro ou ausência de dados.
 function formatBRL(valor) {
   return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
@@ -77,6 +87,7 @@ function formatMonth(ym) {
   return `${m}/${y}`;
 }
 
+// Gera um ID único baseado no timestamp atual. 
 function uid() {
   return Date.now();
 }
@@ -93,6 +104,7 @@ const CAT_LABEL = {
   vestuario: 'Vestuário', outros: 'Outros',
 };
 
+// Função de exibição de mensagens temporárias (toasts) para feedback ao usuário.
 function toast(msg, duracao = 2800) {
   const el = document.getElementById('toast');
   el.textContent = msg;
@@ -100,6 +112,7 @@ function toast(msg, duracao = 2800) {
   setTimeout(() => el.classList.remove('show'), duracao);
 }
 
+// Calcula o total de gastos do mês atual, filtrando os gastos por data e somando seus valores.
 function totalGastosMesAtual() {
   const hoje = new Date();
   const mesAtual = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, '0')}`;
@@ -108,6 +121,7 @@ function totalGastosMesAtual() {
     .reduce((s, g) => s + g.valor, 0);
 }
 
+// Funções de renderização e manipulação de gastos, metas e registros emocionais. Cada função atualiza a interface com base no estado atual e deve ser chamada após qualquer modificação relevante.
 function renderGastos() {
   const list    = document.getElementById('gastoList');
   const empty   = document.getElementById('gastoEmpty');
@@ -142,6 +156,7 @@ function renderGastos() {
   });
 }
 
+// Adiciona um novo gasto ao estado, atualiza a interface e exibe um toast de confirmação.
 function addGasto(gasto) {
   state.gastos.push({ ...gasto, id: state.nextGastoId++ });
   persistAll();
@@ -152,6 +167,7 @@ function addGasto(gasto) {
   toast('✅ Gasto registrado!');
 }
 
+// Remove um gasto do estado com base no ID, atualiza a interface e exibe um toast de confirmação.
 function deleteGasto(id) {
   state.gastos = state.gastos.filter(g => g.id !== id);
   persistAll();
@@ -162,6 +178,7 @@ function deleteGasto(id) {
   toast('🗑️ Gasto removido.');
 }
 
+// Inicializa o formulário de registro de gastos, configurando o valor padrão da data e adicionando um listener para o envio do formulário.
 function initGastoForm() {
   const form = document.getElementById('gastoForm');
 
@@ -191,6 +208,7 @@ function initGastoForm() {
   });
 }
   
+// Funções de renderização e manipulação de metas, incluindo adição, remoção e atualização da interface.
 function renderMetas() {
   const list  = document.getElementById('metasList');
   const empty = document.getElementById('metasEmpty');
@@ -201,6 +219,7 @@ function renderMetas() {
     return;
   }
 
+  // Ordena as metas por prazo (mais próximo primeiro) e exibe as 10 mais recentes.
   empty.style.display = 'none';
   list.innerHTML = state.metas.map(m => `
     <div class="meta-item" data-id="${m.id}">
@@ -226,6 +245,7 @@ function renderMetas() {
   });
 }
 
+// Remove uma meta do estado com base no ID, atualiza a interface e exibe um toast de confirmação.
 function deleteMeta(id) {
   state.metas = state.metas.filter(m => m.id !== id);
   persistAll();
@@ -233,6 +253,7 @@ function deleteMeta(id) {
   toast('🗑️ Meta removida.');
 }
 
+// Inicializa o formulário de criação de metas, adicionando um listener para o envio do formulário e validando os campos antes de adicionar a meta ao estado.
 function initMetaForm() {
   const form      = document.getElementById('metaForm');
   const rangeEl   = document.getElementById('metaProgresso');
@@ -264,6 +285,7 @@ function initMetaForm() {
   });
 }
 
+// Formata uma data ISO (YYYY-MM-DD) para o formato brasileiro (DD/MM/YYYY).
 function gerarSemanas() {
   const hoje = new Date();
   const semanaAtual = Math.ceil(hoje.getDate() / 7);
@@ -274,6 +296,7 @@ function gerarSemanas() {
   }));
 }
 
+// Calcula o total de gastos para uma semana específica do mês atual, filtrando os gastos por data e somando seus valores.
 function calcularGastoSemana(semana) {
   const hoje = new Date();
   const ano  = hoje.getFullYear();
@@ -292,6 +315,7 @@ function calcularGastoSemana(semana) {
     .reduce((s, g) => s + g.valor, 0);
 }
 
+// Gera um insight personalizado com base nos gastos do mês atual, destacando a categoria mais gasta e o percentual do limite mensal utilizado, se aplicável.
 function gerarInsight() {
   const total = totalGastosMesAtual();
   if (state.gastos.length === 0) return 'Registre seus gastos para ver insights personalizados.';
@@ -309,6 +333,7 @@ function gerarInsight() {
   return `Você gastou mais em ${CAT_LABEL[topCat[0]] || topCat[0]} (${formatBRL(topCat[1])}).${limiteMsg}`;
 }
 
+// Atualiza a seção de planejamento financeiro com base no estado atual, incluindo renda, gastos, saldo, economia recomendada e gráficos semanais. Também exibe insights personalizados e gerencia a barra de limite mensal, se aplicável.
 function updatePlanejamento() {
   const totalMes = totalGastosMesAtual();
   const saldo    = state.renda - totalMes;
@@ -351,6 +376,7 @@ function updatePlanejamento() {
   }
 }
 
+// Função de formatação de data para exibição nas reflexões, convertendo uma string ISO para o formato brasileiro.
 function initPlanejamentoForm() {
   const form = document.getElementById('rendaForm');
 
@@ -383,6 +409,7 @@ function initPlanejamentoForm() {
   });
 }
 
+// Função de formatação de data para exibição nas reflexões, convertendo uma string ISO para o formato brasileiro.
 let pieChartInstance = null;
 let barChartInstance = null;
 
@@ -398,6 +425,7 @@ function agregaGastosPorCategoria() {
   };
 }
 
+// Renderiza o gráfico de pizza (doughnut) com base nos gastos por categoria, utilizando a biblioteca Chart.js. Se não houver dados, limpa o gráfico.
 const CHART_COLORS = [
   '#a855f7', '#d946ef', '#7c3aed', '#ec4899',
   '#8b5cf6', '#c026d3', '#6d28d9', '#db2777',
@@ -454,6 +482,7 @@ function renderPieChart() {
   });
 }
 
+// Conta a frequência de cada tipo de humor registrado, mapeando os códigos de humor para rótulos legíveis e retornando um objeto com as labels e valores para renderização dos gráficos.
 function contaMoods() {
   const map = {};
   const moodLabel = { otimo: 'Ótimo', bem: 'Bem', neutro: 'Neutro', ansioso: 'Ansioso', mal: 'Mal', exagero: 'Exagero' };
@@ -464,6 +493,7 @@ function contaMoods() {
   return { labels: Object.keys(map), values: Object.values(map) };
 }
 
+// Renderiza o gráfico de barras com base na contagem de humores registrados, utilizando a biblioteca Chart.js. Se não houver dados, limpa o gráfico.
 function renderBarChart() {
   const { labels, values } = contaMoods();
   const ctx = document.getElementById('barChart').getContext('2d');
@@ -519,9 +549,11 @@ function updateGraficos() {
   renderBarChart();
 }
 
+// Mapeamento de códigos de humor para emojis e rótulos legíveis, utilizado na renderização dos registros emocionais no Diário. Cada registro exibe a data, o humor (com emoji e rótulo) e um texto opcional.
 const MOOD_EMOJI = { otimo: '😌', bem: '🙂', neutro: '😐', ansioso: '😰', mal: '😔', exagero: '🤯' };
 const MOOD_LABEL = { otimo: 'Ótimo', bem: 'Bem', neutro: 'Neutro', ansioso: 'Ansioso', mal: 'Mal', exagero: 'Exagero' };
 
+// Renderiza a lista de registros emocionais no Diário, exibindo os mais recentes primeiro. Se não houver registros, exibe uma mensagem de vazio. Cada item mostra a data, o humor (com emoji e rótulo) e um texto descritivo.
 function renderEmocional() {
   const list  = document.getElementById('emocionalList');
   const empty = document.getElementById('emocionalEmpty');
@@ -546,6 +578,7 @@ function renderEmocional() {
   `).join('');
 }
 
+// Inicializa o formulário de registro emocional, configurando os botões de seleção de humor e o envio do formulário. Valida a seleção de humor e o texto antes de adicionar um novo registro ao estado, atualizar a interface e exibir um toast de confirmação.
 function initEmocional() {
   const btns  = document.querySelectorAll('.mood-btn');
   const form  = document.getElementById('emocionalForm');
@@ -592,6 +625,7 @@ function initEmocional() {
   });
 }
 
+// Analisa os padrões de gastos com base nas categorias e na relação entre renda e gastos, gerando uma lista de padrões identificados com descrições, ícones e cores para exibição na interface. Cada padrão destaca um aspecto específico do comportamento financeiro do usuário, como gastos por impulso, economia planejada, investimento em alimentação e saúde.
 function analisarPadroes() {
   const total = state.gastos.reduce((s, g) => s + g.valor, 0);
 
@@ -642,6 +676,7 @@ function analisarPadroes() {
   ];
 }
 
+// Gera insights personalizados com base nos gastos do mês atual, destacando a categoria mais gasta, o percentual da renda utilizada, o progresso das metas e os registros emocionais recentes. Cada insight é representado por um ícone e um texto descritivo para fornecer feedback relevante ao usuário sobre seu comportamento financeiro.
 function gerarInsights() {
   const insights = [];
   const total    = state.gastos.reduce((s, g) => s + g.valor, 0);
@@ -690,6 +725,7 @@ function gerarInsights() {
   return insights;
 }
 
+// Atualiza a seção de padrões financeiros com base na análise dos gastos e gera insights personalizados, renderizando os cartões de padrões e a lista de insights na interface. Também atualiza o ranking de categorias mais gastas para fornecer uma visão geral do comportamento financeiro do usuário.
 function updatePadroes() {
   const padroes  = analisarPadroes();
   const insights = gerarInsights();
@@ -733,6 +769,7 @@ function updatePadroes() {
       `).join('');
 }
 
+// Inicializa a navegação, configurando um IntersectionObserver para destacar o link ativo com base na seção visível e adicionando listeners para rolagem suave ao clicar nos links de navegação. Também gerencia a abertura e fechamento do menu em dispositivos móveis.
 function initNavHighlight() {
   const sections  = document.querySelectorAll('.section');
   const navLinks  = document.querySelectorAll('.nav-link');
@@ -761,6 +798,7 @@ function initNavHighlight() {
   });
 }
 
+// Inicializa o menu hamburger para dispositivos móveis, adicionando um listener de clique que alterna a classe 'open' no contêiner de links de navegação, permitindo que o menu seja exibido ou ocultado.
 function initHamburger() {
   const btn   = document.getElementById('hamburger');
   const links = document.getElementById('navLinks');
@@ -786,6 +824,7 @@ function initModal() {
   });
 }
 
+// Função de inicialização principal que é executada quando o DOM é completamente carregado. Configura os formulários, renderiza os dados iniciais, atualiza os gráficos e padrões, e inicializa a navegação, menu hamburger e modal. Também adiciona uma animação de atraso para as seções para um efeito visual mais suave.
 document.addEventListener('DOMContentLoaded', () => {
 
   initGastoForm();

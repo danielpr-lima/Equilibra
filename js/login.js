@@ -1,3 +1,4 @@
+// Script para controlar o comportamento do formulário de login, incluindo validação de campos e exibição de mensagens de erro. O script também inclui um botão para recuperação de senha, que atualmente exibe um alerta indicando que a funcionalidade está em desenvolvimento.
 (function () {
   'use strict';
 
@@ -45,6 +46,7 @@
 
     if (!validateForm(username, password)) return;
 
+    //Espera do back-end
     window.location.href = '../index.html';
   });
 

@@ -1,3 +1,4 @@
+// Script para controlar a interação das "pills" de humor e os emojis na página de humor, permitindo que os usuários selecionem seu humor diário. O script adiciona a classe "on" ao elemento clicado e remove essa classe dos outros elementos para indicar a seleção atual.
 (function () {
   'use strict';
 

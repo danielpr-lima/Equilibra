@@ -16,6 +16,7 @@ body {
   transition: background-color 0.35s ease, color 0.35s ease;
 }
 
+/* Transições suaves para links, botões e outros elementos interativos */
 a,
 button,
 input,
@@ -83,6 +84,7 @@ a {
   background: var(--accent2);
 }
 
+/* Botão "Adicionar" usado em várias partes do site, como para adicionar tarefas, projetos, etc. */
 .btn-add {
   background: var(--accent-soft);
   color: var(--accent);
@@ -94,7 +96,6 @@ a {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
 }
-
 .btn-add:hover {
   background: var(--accent);
   color: #fff;
@@ -153,7 +154,6 @@ a {
   padding: 2px 6px;
   border-radius: 4px;
 }
-
 .btn-delete:hover {
   opacity: 1;
   background: rgba(239, 68, 68, 0.1);
@@ -207,7 +207,6 @@ a {
   font-size: 0.9rem; 
   opacity: 0.7; 
 }
-
 .dbtn:hover { 
   opacity: 1; 
 }
@@ -233,6 +232,7 @@ a {
   margin-bottom: 24px;
 }
 
+/* O botão "Saiba Mais" na seção dois é estilizado como um link, mas com aparência de botão */
 .section-two {
   display: flex;
   flex-direction: row;
@@ -319,7 +319,6 @@ footer {
   color: rgba(255, 255, 255, 0.48);
   text-decoration: none;
 }
-
 .fcol ul li a:hover {
   color: #c4b5fd;
 }
@@ -336,7 +335,6 @@ footer {
   font-size: 1.6rem;
   transition: color 0.25s;
 }
-
 .fcol .footer-social a:hover {
   color: var(--accent2);
 }
@@ -350,6 +348,7 @@ footer {
   color: rgba(255, 255, 255, 0.32);
 }
 
+/*Estilo para ser a seção hero*/
 .login-error{
   display:none; 
   color:#ef4444; 

@@ -1051,8 +1051,7 @@ input, select, textarea {
     z-index: 199;
   }
   .nav-link { border-radius: var(--d-radius-sm); padding: 10px 14px; }
-  .hamburger { display: flex; }
-  .avatar-name { display: none; }
+  .hamburger-nav { display: flex; }
 }
 
 @media (max-width: 700px) {

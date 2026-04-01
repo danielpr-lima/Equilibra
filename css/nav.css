@@ -47,7 +47,6 @@ nav {
   text-decoration: none;
   transition: color 0.25s;
 }
-
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--accent);
@@ -74,7 +73,6 @@ nav {
   font-family: 'Poppins', sans-serif;
   transition: background 0.25s, color 0.25s;
 }
-
 .btn-theme:hover {
   background: var(--accent-soft);
   color: var(--accent);
@@ -94,7 +92,6 @@ nav {
   text-decoration: none;
   transition: background 0.25s;
 }
-
 .btn-entrar:hover {
   background: var(--accent2);
 }
@@ -119,6 +116,7 @@ nav {
   transition: all 0.3s ease;
 }
 
+/* Quando o menu hamburger está aberto, as linhas se transformam para formar um "X" e a linha do meio desaparece. */
 .hamburger-nav.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -129,6 +127,7 @@ nav {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+
 @media (max-width: 768px) {
   .hamburger-nav {
     display: flex;
@@ -138,6 +137,7 @@ nav {
     display: none;
   }
 
+  /* Em telas menores, os links de navegação são ocultados por padrão e exibidos apenas quando o menu hamburger é aberto. */
   .nav-links {
     display: none;
     flex-direction: column;
