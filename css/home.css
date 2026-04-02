@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.header{
+    background: linear-gradient(to bottom, #EB6CFF -170.27%, #390E51 70%);
+
+}
+.content-header{
+    margin: auto;
+    max-width: 1700px;
+    padding: 20px;
+    display: flex;
+    justify-content:center; /* Empurra o nav para um lado e o logo para o outro */
+    gap: 300px;
+    align-items: center;           /* Alinha verticalmente ao centro */
+    color: white;
+}
+
+.nav ul {
+    display: flex;              
+    gap: 20px;                  
+}
+
+.nav a {
+    color: white;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.logo {
+    display: flex;                 
+    align-items: center;           
+    gap: 15px;                     
+}
+
+.logo img {
+    width: 100px;               
+}
+
+.logo h1 {
+    font-size: 24px;    
+}
+.section-1{
+    background: #390E51;
+}
+.section-1-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 1700px;
+    text-align: center;
+}
+
+.section-1-content h2{
+    margin: 50px;
+    color: white;
+    font-size: 30px;
+}
+
+.cards-sentimentos{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap:50px;
+    
+}
+.card-sentimento{
+    display: flex;
+    background-color:#FFFFFF59;
+    border: 2px solid #D997FF;
+    height: 70px;
+    width: 280px;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-2{
+    background: linear-gradient(360deg, #EB6CFF -13.92%, #390E51 94.98%);
+
+}
+.section2-content{
+    display: flex;
+    max-width: 1700px;
+    justify-content: center;
+    margin: auto;
+    
+    gap: 80px;
+}
+.card-section2{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.card-section2 img{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    border: 2px solid black;
+    width: 385px;
+}
+
+.card-section2 button{
+    background: linear-gradient(90deg, rgba(248, 0, 223, 0.35) -17.35%, rgba(255, 255, 255, 0.35) 94.95%);
+    width: 90%;
+    border-radius: 35px;
+    border: solid 1px white;
+    padding: 12px 40px;
+    margin-top: 50px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: center;
+    transition: all 0.3s ease;
+}
+
+.card-section2 button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
