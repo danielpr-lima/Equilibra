@@ -124,7 +124,7 @@ const CAT_LABEL = {
  */
 function toast(msg, duracao = 2800) {
     const el = document.getElementById('toast');
-    if(!el) return;
+    if (!el) return;
     el.textContent = msg;
     el.classList.add('show');
     setTimeout(() => el.classList.remove('show'), duracao);
@@ -383,7 +383,7 @@ function updatePlanejamento() {
     const totalMes = totalGastosMesAtual();
     const saldo = state.renda - totalMes;
 
-    document.getElementById('planRenda').textContent  = formatBRL(state.renda);
+    document.getElementById('planRenda').textContent = formatBRL(state.renda);
     document.getElementById('planGastos').textContent = formatBRL(totalMes);
     document.getElementById('planSaldo').textContent = formatBRL(Math.max(0, saldo));
     document.getElementById('planEconomia').textContent = formatBRL(Math.max(0, saldo * 0.2)); // Simula que 20% é economia
@@ -572,6 +572,8 @@ function renderBarChart() {
 
 /** Função atalho para atualizar os dois gráficos de uma vez */
 function updateGraficos() {
+    if (!document.getElementById('pieChart') && !document.getElementById('barChart')) return;
+
     renderPieChart();
     renderBarChart();
 }
@@ -748,7 +750,7 @@ function updatePadroes() {
 
     const grid = document.getElementById('padroesGrid');
     if (!grid) return; // Trava de segurança
-    
+
     grid.innerHTML = padroes.map(p => `
     <div class="padrao-card">
       <div class="padrao-icon-wrap">${p.icon}</div>
@@ -852,9 +854,9 @@ function closeModal() {
 function initModal() {
     const modalClose = document.getElementById('modalClose');
     const modalOverlay = document.getElementById('modalOverlay');
-    
+
     if (!modalClose || !modalOverlay) return;
-    
+
     document.getElementById('modalClose').addEventListener('click', closeModal);
     document.getElementById('modalOverlay').addEventListener('click', e => {
         if (e.target === document.getElementById('modalOverlay')) closeModal();
