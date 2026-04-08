@@ -2,13 +2,10 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--nav-bg);
-  border-bottom: 1px solid var(--nav-brd);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: linear-gradient(to top, #D89DFB, #8733AC);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0 6%;
   height: 62px;
 }
