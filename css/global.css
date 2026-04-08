@@ -332,6 +332,7 @@ textarea {
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     border-radius: 50px;
     padding: 10px 22px;
@@ -340,11 +341,13 @@ textarea {
     border: none;
     transition: all 0.25s;
     white-space: nowrap;
+    
 }
 
 .btn-primary {
     background: var(--accent);
     color: #fff;
+    
 }
 
 .btn-primary:hover {
