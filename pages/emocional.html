@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equilíbra – Controle de Gastos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="../img/Group.svg" />
+
+    <!-- <link rel="stylesheet" href="../css/variaveis.css"> -->
+    <!-- <link rel="stylesheet" href="../css/diario.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/nav.css"> -->
+     <link rel="stylesheet" href="../css/global.css" />
+     <link rel="stylesheet" href="../css/pages/emocional.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <a class="nav-logo" href="../index.html">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img" />
+        Equilíbra
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Início</a></li>
+        <li><a href="gastos.html" class="nav-link active">Gastos</a></li>
+        <li><a href="metas.html" class="nav-link">Metas</a></li>
+        <li><a href="planejamento.html" class="nav-link">Planejamento</a></li>
+        <li><a href="grafico.html" class="nav-link">Gráficos</a></li>
+        <li><a href="emocional.html" class="nav-link">Emocional</a></li>
+        <li><a href="padroes.html" class="nav-link">Padrões</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn-theme" id="themeBtn" aria-label="Alternar tema">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">Modo noturno</span>
+        </button>
+        <div class="avatar-chip">
+          <span class="avatar-icon">🧑‍💻</span>
+          <span class="avatar-name">Daniel</span>
+        </div>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="section" id="emocional">
+        <div class="section-header">
+          <span class="section-badge">🧠</span>
+          <div>
+            <h2 class="section-title">Registro Emocional</h2>
+            <p class="section-sub">Como suas emoções impactam suas finanças?</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card card-glass">
+            <h3 class="card-title">Como você está se sentindo?</h3>
+            <div class="mood-grid">
+              <button class="mood-btn" data-mood="otimo" type="button">
+                😌<span>Ótimo</span>
+              </button>
+              <button class="mood-btn" data-mood="bem" type="button">
+                🙂<span>Bem</span>
+              </button>
+              <button class="mood-btn" data-mood="neutro" type="button">
+                😐<span>Neutro</span>
+              </button>
+              <button class="mood-btn" data-mood="ansioso" type="button">
+                😰<span>Ansioso</span>
+              </button>
+              <button class="mood-btn" data-mood="mal" type="button">
+                😔<span>Mal</span>
+              </button>
+              <button class="mood-btn" data-mood="exagero" type="button">
+                🤯<span>Exagero</span>
+              </button>
+            </div>
+            <form
+              class="form-stack"
+              id="emocionalForm"
+              style="margin-top: 16px"
+            >
+              <div class="field-group">
+                <label for="emocionalTexto"
+                  >Escreva sobre sua situação financeira hoje</label
+                >
+                <textarea
+                  id="emocionalTexto"
+                  rows="4"
+                  placeholder="Como você se sentiu com suas finanças hoje? Tomou alguma decisão importante? O que gostaria de melhorar?"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
+          </div>
+          <div class="card card-glass">
+            <h3 class="card-title">Registros Anteriores</h3>
+            <div class="emocional-list" id="emocionalList"></div>
+            <p class="empty-state" id="emocionalEmpty">
+              Nenhum registro emocional ainda.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- <footer>
+    <div class="footer-brand">
+      <div class="flogo">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" width="20" height="20">
+        Equilíbra
+      </div>
+      <p class="fdesc">Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir sobre suas finanças.</p>
+      <span class="ftag">Projeto acadêmico</span>
+    </div>
+  </footer>
+  <div class="fbot">© 2026 Equilíbra – Projeto acadêmico</div> -->
+
+    <!-- <script src="../js/theme.js"></script> -->
+    <script src="../js//back/script.js"></script>
+    <!-- <script src="../js/nav-hamburger.js"></script> -->
+  </body>
+</html>

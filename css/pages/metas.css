@@ -1,0 +1,89 @@
+/* ====================================================
+   METAS.CSS - Estilos específicos da tela de Metas
+   ==================================================== */
+
+/* Container da lista de metas com barra de rolagem */
+.metas-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 14px; 
+  max-height: 340px; 
+  overflow-y: auto; 
+}
+
+/* Card individual de cada meta cadastrada */
+.meta-item {
+  background: var(--inp-bg);
+  border: 1px solid var(--d-border);
+  border-radius: var(--d-radius-sm);
+  padding: 14px;
+  transition: border-color 0.2s, background-color 0.35s ease;
+}
+
+.meta-item:hover { 
+  border-color: var(--d-border-h); 
+}
+
+/* Alinha o título e o valor da meta no topo */
+.meta-item-header {
+   display: flex; 
+   align-items: center; 
+   justify-content: space-between; 
+   margin-bottom: 10px; 
+}
+
+.meta-item-name { 
+  font-weight: 600; 
+  font-size: 0.87rem; 
+  color: var(--text-h); 
+}
+
+.meta-item-val { 
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 700; 
+  font-size: 0.82rem; 
+  color: var(--accent); 
+}
+
+/* Botão "X" de excluir meta */
+.meta-del {
+  background: none; 
+  border: none; 
+  color: #ef4444; 
+  font-size: 0.78rem;
+  opacity: 0.5; 
+  padding: 2px 5px; 
+  transition: opacity 0.2s; 
+}
+
+.meta-del:hover { opacity: 1; }
+
+/* Fundo cinza da barrinha de progresso */
+.meta-bar-wrap { 
+  height: 6px; 
+  background: var(--prg-bg); 
+  border-radius: 3px; 
+  overflow: hidden; 
+  margin-bottom: 8px; 
+}
+
+/* Preenchimento gradiente da barrinha de progresso */
+.meta-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 3px;
+  transition: width 0.6s ease; /* Anima o preenchimento crescendo suavemente */
+}
+
+/* Alinha a porcentagem (%) e o Prazo no rodapé da meta */
+.meta-footer { 
+  display: flex; 
+  justify-content: space-between; 
+  font-size: 0.72rem; 
+  color: var(--text-m); 
+}
+
+.meta-pct { 
+  font-weight: 600; 
+  color: var(--accent); 
+}

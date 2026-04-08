@@ -1,0 +1,26 @@
+/* ====================================================
+   GRAFICO.CSS - Estilos da tela de Gráficos
+   ==================================================== */
+
+/* Configura o card que segura os gráficos (Canvas) */
+.chart-card { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+/* Define a área limite em que o Chart.js vai desenhar o gráfico */
+.chart-wrap { 
+  flex: 1; /* Ocupa todo o espaço vertical disponível */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 10px 0; 
+  max-height: 300px; /* Limite máximo para o gráfico não esticar demais */
+}
+
+/* Posiciona os botões de ação logo abaixo do gráfico */
+.chart-actions { 
+  display: flex; 
+  justify-content: flex-end; /* Alinha o botão "Registrar" à direita */
+  margin-top: 14px; 
+}

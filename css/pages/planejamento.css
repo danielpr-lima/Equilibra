@@ -1,0 +1,110 @@
+/* ====================================================
+   PLANEJAMENTO.CSS - Estilos da tela de Planejamento
+   ==================================================== */
+
+/* Grid que coloca os 4 cards de semana lado a lado */
+.weekly-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px; 
+  margin-bottom: 18px; 
+}
+
+/* Card padrão das Semanas */
+.week-card {
+  background: var(--inp-bg);
+  border: 1px solid var(--d-border);
+  border-radius: var(--d-radius-sm);
+  padding: 12px;
+  text-align: center;
+  transition: border-color 0.25s, background-color 0.35s ease;
+}
+
+/* Destaca o card que representa a semana atual com cor roxa */
+.week-card.current { 
+  border-color: var(--accent); 
+  background: var(--accent-soft); 
+}
+
+.week-label {
+  font-size: 0.7rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--text-m);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.week-value { 
+  font-family: 'Poppins', sans-serif; 
+  font-weight: 800; 
+  font-size: 0.9rem; 
+  color: var(--text-h); 
+}
+
+.week-card.current .week-value { 
+  color: var(--accent); 
+}
+
+/* Caixa de aviso/Dica (Insights automáticos) */
+.insight-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--d-border);
+  border-radius: var(--d-radius-sm);
+  padding: 12px 16px;
+  margin-top: 4px;
+  transition: background-color 0.35s ease;
+}
+
+.insight-icon { 
+  font-size: 1.1rem; 
+  flex-shrink: 0; 
+}
+
+#insightText { 
+  font-size: 0.83rem; 
+  color: var(--text-m); 
+  line-height: 1.5; 
+}
+
+/* Barrinha que mostra "Gasto vs Limite" configurado pelo usuário */
+.limit-bar-wrap {
+   margin-top: 16px; 
+}
+
+.limit-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: var(--text-m);
+  margin-bottom: 6px;
+}
+
+.limit-bar { 
+  height: 8px; 
+  background: var(--prg-bg); 
+  border-radius: 4px; 
+  overflow: hidden; 
+}
+
+.limit-fill { 
+  height: 100%; 
+  background: var(--accent); 
+  border-radius: 4px; 
+  transition: width 0.5s ease; 
+}
+
+/* Fica vermelha se o gasto passar de 80% do limite */
+.limit-fill.danger {
+  background: #f87171; 
+}
+
+/* Responsividade: Exibe 2 semanas por linha em telas menores */
+@media (max-width: 700px) {
+  .weekly-grid  { grid-template-columns: repeat(2, 1fr); }
+}

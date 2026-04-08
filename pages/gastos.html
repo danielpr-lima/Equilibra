@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equilíbra – Controle de Gastos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="../img/Group.svg" />
+
+    <!-- <link rel="stylesheet" href="../css/variaveis.css"> -->
+    <!-- <link rel="stylesheet" href="../css/diario.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/nav.css"> -->
+     <link rel="stylesheet" href="../css/global.css" />
+     <link rel="stylesheet" href="../css/pages/gastos.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <a class="nav-logo" href="../index.html">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img" />
+        Equilíbra
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Início</a></li>
+        <li><a href="gastos.html" class="nav-link active">Gastos</a></li>
+        <li><a href="metas.html" class="nav-link">Metas</a></li>
+        <li><a href="planejamento.html" class="nav-link">Planejamento</a></li>
+        <li><a href="grafico.html" class="nav-link">Gráficos</a></li>
+        <li><a href="emocional.html" class="nav-link">Emocional</a></li>
+        <li><a href="padroes.html" class="nav-link">Padrões</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn-theme" id="themeBtn" aria-label="Alternar tema">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">Modo noturno</span>
+        </button>
+        <div class="avatar-chip">
+          <span class="avatar-icon">🧑‍💻</span>
+          <span class="avatar-name">Daniel</span>
+        </div>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="section" id="gastos">
+        <div class="section-header">
+          <span class="section-badge">💸</span>
+          <div>
+            <h2 class="section-title">Controle de Gastos</h2>
+            <p class="section-sub">Registre e acompanhe seus gastos pessoais</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card card-glass">
+            <h3 class="card-title">Registrar Gasto</h3>
+            <form class="form-stack" id="gastoForm">
+              <div class="field-group">
+                <label for="gastoNome">Nome do gasto</label>
+                <input
+                  type="text"
+                  id="gastoNome"
+                  placeholder="Ex: Mercado, Uber..."
+                  required
+                />
+              </div>
+              <div class="field-group">
+                <label for="gastoCategoria">Categoria</label>
+                <select id="gastoCategoria">
+                  <option value="alimentacao">🍔 Alimentação</option>
+                  <option value="transporte">🚗 Transporte</option>
+                  <option value="lazer">🎮 Lazer</option>
+                  <option value="saude">💊 Saúde</option>
+                  <option value="educacao">📚 Educação</option>
+                  <option value="moradia">🏠 Moradia</option>
+                  <option value="vestuario">👗 Vestuário</option>
+                  <option value="outros">📦 Outros</option>
+                </select>
+              </div>
+              <div class="field-row">
+                <div class="field-group">
+                  <label for="gastoValor">Valor (R$)</label>
+                  <input
+                    type="number"
+                    id="gastoValor"
+                    placeholder="0,00"
+                    min="0"
+                    step="0.01"
+                    required
+                  />
+                </div>
+                <div class="field-group">
+                  <label for="gastoData">Data</label>
+                  <input type="date" id="gastoData" required />
+                </div>
+              </div>
+              <div class="field-group">
+                <label for="gastoDesc"
+                  >Como você se sentiu após essa compra?</label
+                >
+                <textarea
+                  id="gastoDesc"
+                  rows="2"
+                  placeholder="Opcional..."
+                ></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                  <span>Registrar</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 5v14M5 12l7 7 7-7"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline"
+                  id="btnVerGrafico"
+                >
+                  Ver gráfico
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="card card-glass">
+            <div class="card-header-row">
+              <h3 class="card-title">Últimos Gastos</h3>
+              <span class="badge-total" id="totalGastos">R$ 0,00</span>
+            </div>
+            <div class="expense-list" id="gastoList"></div>
+            <p class="empty-state" id="gastoEmpty">
+              Nenhum gasto registrado ainda.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- <footer>
+    <div class="footer-brand">
+      <div class="flogo">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" width="20" height="20">
+        Equilíbra
+      </div>
+      <p class="fdesc">Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir sobre suas finanças.</p>
+      <span class="ftag">Projeto acadêmico</span>
+    </div>
+  </footer>
+  <div class="fbot">© 2026 Equilíbra – Projeto acadêmico</div> -->
+
+    <!-- <script src="../js/theme.js"></script> -->
+    <script src="../js//back/script.js"></script>
+    <!-- <script src="../js/nav-hamburger.js"></script> -->
+  </body>
+</html>

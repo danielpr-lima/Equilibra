@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equilíbra – Controle de Gastos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="../img/Group.svg" />
+
+    <!-- <link rel="stylesheet" href="../css/variaveis.css"> -->
+    <!-- <link rel="stylesheet" href="../css/diario.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/nav.css"> -->
+     <link rel="stylesheet" href="../css/global.css" />
+     <link rel="stylesheet" href="../css/pages/metas.css" />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <a class="nav-logo" href="../index.html">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" class="logo-img" />
+        Equilíbra
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html" class="nav-link">Início</a></li>
+        <li><a href="gastos.html" class="nav-link active">Gastos</a></li>
+        <li><a href="metas.html" class="nav-link">Metas</a></li>
+        <li><a href="planejamento.html" class="nav-link">Planejamento</a></li>
+        <li><a href="grafico.html" class="nav-link">Gráficos</a></li>
+        <li><a href="emocional.html" class="nav-link">Emocional</a></li>
+        <li><a href="padroes.html" class="nav-link">Padrões</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="btn-theme" id="themeBtn" aria-label="Alternar tema">
+          <span id="themeIcon" aria-hidden="true">🌙</span>
+          <span id="themeLabel">Modo noturno</span>
+        </button>
+        <div class="avatar-chip">
+          <span class="avatar-icon">🧑‍💻</span>
+          <span class="avatar-name">Daniel</span>
+        </div>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <section class="section" id="metas">
+        <div class="section-header">
+          <span class="section-badge">🎯</span>
+          <div>
+            <h2 class="section-title">Metas Financeiras</h2>
+            <p class="section-sub">Defina objetivos e acompanhe sua evolução</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card card-glass">
+            <div class="card-header-row">
+              <h3 class="card-title">Suas Metas</h3>
+            </div>
+            <div class="metas-list" id="metasList"></div>
+            <p class="empty-state" id="metasEmpty" style="display: none">
+              Nenhuma meta cadastrada.
+            </p>
+          </div>
+          <div class="card card-glass">
+            <h3 class="card-title">Nova Meta</h3>
+            <form class="form-stack" id="metaForm">
+              <div class="field-group">
+                <label for="metaNome">Meta</label>
+                <input
+                  type="text"
+                  id="metaNome"
+                  placeholder="Ex: Viagem, Notebook..."
+                  required
+                />
+              </div>
+              <div class="field-group">
+                <label for="metaValor">Valor necessário (R$)</label>
+                <input
+                  type="number"
+                  id="metaValor"
+                  placeholder="0,00"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+              </div>
+              <div class="field-group">
+                <label for="metaPrazo">Prazo</label>
+                <input type="month" id="metaPrazo" required />
+              </div>
+              <div class="field-group">
+                <label for="metaProgresso">Progresso atual (%)</label>
+                <div class="range-wrap">
+                  <input
+                    type="range"
+                    id="metaProgresso"
+                    min="0"
+                    max="100"
+                    value="0"
+                    class="range-input"
+                  />
+                  <span class="range-value" id="metaProgressoVal">0%</span>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary full-width">
+                Registrar
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">×</button>
+        <div id="modalContent"></div>
+      </div>
+    </div>
+
+    <!-- <footer>
+    <div class="footer-brand">
+      <div class="flogo">
+        <img src="../img/Group.svg" alt="Logo Equilíbra" width="20" height="20">
+        Equilíbra
+      </div>
+      <p class="fdesc">Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir sobre suas finanças.</p>
+      <span class="ftag">Projeto acadêmico</span>
+    </div>
+  </footer>
+  <div class="fbot">© 2026 Equilíbra – Projeto acadêmico</div> -->
+
+    <!-- <script src="../js/theme.js"></script> -->
+    <script src="../js//back/script.js"></script>
+    <!-- <script src="../js/nav-hamburger.js"></script> -->
+  </body>
+</html>
