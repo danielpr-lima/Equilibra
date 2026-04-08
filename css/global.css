@@ -5,33 +5,22 @@
 /* 1. VARIÁVEIS DO TEMA CLARO E MEDIDAS GERAIS */
 :root {
     --d-nav-h: 64px;
-    /* Altura fixa da barra de navegação */
     --d-radius: 14px;
-    /* Arredondamento padrão de bordas */
     --d-radius-sm: 8px;
-    /* Arredondamento pequeno (inputs, botões) */
     --d-radius-lg: 20px;
-    /* Arredondamento grande (cards principais) */
     --d-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-    /* Sombra padrão */
-    --d-shadow-glow: 0 0 24px rgba(183, 0, 255, 0.14);
-    /* Sombra colorida (brilho) */
-    --d-border: rgba(183, 0, 255, 0.22);
-    /* Cor da borda suave */
-    --d-border-h: rgba(183, 0, 255, 0.55);
-    /* Cor da borda ao passar o mouse */
+    --d-shadow-glow: 0 0 24px rgba(66, 0, 124, 0.14); /* Usando o seu Roxo escuro aqui */
+    --d-border: rgba(66, 0, 124, 0.22); /* Usando o seu Roxo escuro aqui */
+    --d-border-h: rgba(66, 0, 124, 0.55);
     --d-section-gap: 80px;
-    /* Espaço entre as seções da página */
 }
 
-/* 2. VARIÁVEIS DO TEMA ESCURO (Sobrescreve as de cima quando ativado) */
 [data-theme="dark"] {
     --d-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
-    --d-shadow-glow: 0 0 24px rgba(235, 108, 255, 0.22);
-    --d-border: rgba(235, 10, 247, 0.28);
-    --d-border-h: rgba(168, 85, 247, 0.65);
+    --d-shadow-glow: 0 0 24px rgba(172, 82, 217, 0.22); /* Usando o seu Roxo claro aqui */
+    --d-border: rgba(172, 82, 217, 0.28); 
+    --d-border-h: rgba(172, 82, 217, 0.65);
 }
-
 /* 3. RESET BÁSICO (Zera margens e paddings padrão do navegador) */
 *,
 *::before,

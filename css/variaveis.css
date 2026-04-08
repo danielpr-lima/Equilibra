@@ -1,0 +1,68 @@
+/* ====================================================
+   VARIAVEIS.CSS - Paleta de Cores e Temas
+   ==================================================== */
+
+:root {
+  /* ==========================================
+     🌞 TEMA CLARO (Padrão) - Suas Cores
+     ========================================== */
+     
+  /* 1. Fundo Principal (body) */
+  --bg-main: #DBA0FE;
+
+  /* 2. Quadrados maiores (Cards, Navbar, Footer) */
+  --bg-card: #AC52D9;
+  --nav-bg: rgba(172, 82, 217, 0.85); /* #AC52D9 com transparência para efeito vidro */
+  --bg-footer: #AC52D9;
+
+  /* 3. Quadrados menores dentro de outros (Inputs, itens de lista, fundo da barra de progresso) */
+  --inp-bg: #CE8BFF;
+  --prg-bg: #CE8BFF; 
+
+  /* 4. Cor das letras (Textos gerais e Títulos) */
+  --text-b: #2A1840; /* Texto base */
+  --text-h: #2A1840; /* Títulos (h1, h2, h3) */
+  --text-m: #2A1840; /* Texto secundário (Sua cor com um pouco de transparência) */
+
+  /* 5. Destaques (Botões, Barras de progresso, Bordas) */
+  --accent: #42007C;
+  --accent2: #2A1840; /* Cor ao passar o mouse no botão (usando a cor mais escura) */
+  --accent-soft: rgba(66, 0, 124, 0.30); /* Fundo claro para botões de humor e badges */
+  
+  /* Bordas baseadas no seu Destaque (#42007C) */
+  --inp-brd: rgba(66, 0, 124, 0.3); /* Borda dos inputs */
+  --nav-brd: rgba(66, 0, 124, 0.2); /* Linha divisória da navegação */
+}
+
+/* ==========================================
+   🌙 TEMA ESCURO (Dark Mode)
+   ========================================== */
+[data-theme="dark"] {
+  /* No tema escuro, nós invertemos a lógica usando a sua própria paleta!
+     O fundo fica escuro (#2A1840) e os textos ficam claros (#DBA0FE). */
+     
+  /* 1. Fundo Principal */
+  --bg-main: #2A1840;
+
+  /* 2. Quadrados maiores */
+  --bg-card: #42007C;
+  --nav-bg: rgba(66, 0, 124, 0.85);
+  --bg-footer: #1a0f2e; /* Um tom extra escuro para o rodapé assentar bem */
+
+  /* 3. Quadrados menores */
+  --inp-bg: #1a0f2e;
+  --prg-bg: #1a0f2e;
+
+  /* 4. Cor das letras (Invertido para os tons claros da sua paleta) */
+  --text-b: #DBA0FE;
+  --text-h: #CE8BFF;
+  --text-m: rgba(219, 160, 254, 0.7);
+
+  /* 5. Destaques (Agora os destaques precisam ser mais claros para aparecer no fundo escuro) */
+  --accent: #AC52D9;
+  --accent2: #CE8BFF;
+  --accent-soft: rgba(172, 82, 217, 0.2);
+  
+  --inp-brd: rgba(172, 82, 217, 0.4);
+  --nav-brd: rgba(172, 82, 217, 0.2);
+}
