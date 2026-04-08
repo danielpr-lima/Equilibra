@@ -613,9 +613,20 @@ function renderEmocional() {
 
 /** Prepara a tela de clicar nos emojis de humor e envia os dados quando clica em registrar */
 function initEmocional() {
+    // 1. PRIMEIRO: Lógica do botão da página de gráficos (pois ela não tem formulário)
+    const btnSentimento = document.getElementById('btnRegistrarSentimento');
+    if (btnSentimento) {
+        btnSentimento.addEventListener('click', () => {
+            // Redireciona o usuário para a página do Diário Emocional
+            window.location.href = 'emocional.html';
+        });
+    }
+
     const btns = document.querySelectorAll('.mood-btn');
     const form = document.getElementById('emocionalForm');
-    if (!form) return; // Trava de segurança
+    
+    // 2. DEPOIS: A trava de segurança! Se não tiver formulário, a função para aqui e não roda o resto.
+    if (!form) return; 
 
     // Faz os botões de emoji ficarem roxos quando clica neles
     btns.forEach(btn => {
@@ -654,13 +665,6 @@ function initEmocional() {
         btns.forEach(b => b.classList.remove('active'));
         state.selectedMood = null;
     });
-
-    const btnSentimento = document.getElementById('btnRegistrarSentimento');
-    if (btnSentimento) {
-        btnSentimento.addEventListener('click', () => {
-            document.getElementById('emocional').scrollIntoView({ behavior: 'smooth' });
-        });
-    }
 }
 
 // ==========================================================================
