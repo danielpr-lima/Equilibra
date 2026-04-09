@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+nav {
+  height: 120px;
+}
+.nav-logo {
+    font-size: 20px;
+}
+.logo-img {
+  width: 100px;
+}
+.nav-links {
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* ====================================================
+   HOME.CSS - Estilos da página inicial
+   ==================================================== */
+
+/* SEÇÃO 1 - Pergunta de sentimentos */
+.section-1 {
+    /* Usamos o fundo do card para dar um contraste legal e respeitar o tema */
+    background: var(--bg-main);
+    padding-bottom: 40px;
+}
+
+.section-1-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 1700px;
+    text-align: center;
+}
+
+.section-1-content h2 {
+    margin: 50px;
+    /* Puxa a cor dos títulos que se adapta ao tema */
+    color: var(--text-h);
+    font-size: 30px;
+}
+
+.cards-sentimentos {
+    margin: 0 50px 50px 50px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 50px;
+}
+
+.card-sentimento {
+    display: flex;
+    /* Fundo dos inputs/cards menores com a variável */
+    background-color: var(--bg-card);
+    /* Borda baseada no destaque do tema */
+    /* border: 2px solid var(--inp-brd); */
+    /* Cor do texto para ficar legível no claro e escuro */
+    font-weight: 600;
+    color: var(--text-m);
+    height: 70px;
+    width: 280px;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.card-sentimento:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--d-shadow-glow);
+}
+
+
+/* SEÇÃO 2 - Botões de ação rápida */
+.section-2 {
+    /* Trocamos aquele gradiente fixo por um que usa as suas variáveis! */
+    background: var(--bg-main);
+    padding-bottom: 100px;
+}
+
+.section2-content {
+    display: flex;
+    max-width: 1700px;
+    justify-content: center;
+    margin: auto;
+    gap: 80px;
+}
+
+.card-section2 {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-section2 img {
+    /* Se a imagem for transparente, o fundo do card aparece. Se não, podemos manter branco ou tirar o bg. */
+    background-color: var(--inp-bg);
+    border-radius: 50px;
+    border: 2px solid var(--d-border-h);
+    width: 385px;
+    transition: all 0.3s ease;
+}
+
+.card-section2 img:hover {
+    box-shadow: var(--d-shadow);
+}
+
+.card-section2 button {
+    /* Usa a cor de destaque principal (o Roxo escuro/claro dependendo do tema) */
+    background: var(--accent);
+    color: #ffffff; /* Texto branco geralmente fica bem em botões primários */
+    width: 90%;
+    border-radius: 35px;
+    border: none; /* Removida a borda fixa */
+    padding: 12px 40px;
+    margin-top: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: center;
+    transition: all 0.3s ease;
+}
+
+.card-section2 button:hover {
+    /* Cor do botão ao passar o mouse */
+    background: var(--accent2);
+    transform: scale(1.05);
+    box-shadow: var(--d-shadow-glow);
+}
