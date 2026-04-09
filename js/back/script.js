@@ -479,8 +479,14 @@ function agregaGastosPorCategoria() {
 }
 
 const CHART_COLORS = [
-    '#a855f7', '#d946ef', '#7c3aed', '#ec4899',
-    '#8b5cf6', '#c026d3', '#6d28d9', '#db2777',
+    '#FFD166', // Amarelo pastel (O melhor contraste possível com roxo)
+    '#06D6A0', // Verde menta vivo
+    '#2A1840', // O seu roxo escuro para ancorar
+    '#FF9F1C', // Laranja vibrante
+    '#118AB2', // Azul oceano
+    '#DBA0FE', // O seu lilás clarinho
+    '#EF476F', // Rosa melancia
+    '#F8F9FA'  // Quase branco
 ];
 
 /** Cria ou atualiza o gráfico de pizza (Rosquinha) de categorias */
@@ -515,7 +521,13 @@ function renderPieChart() {
             maintainAspectRatio: true,
             cutout: '60%',
             plugins: {
-                legend: { position: 'bottom', labels: { color: '#a78bfa', font: { family: 'DM Sans', size: 11 } } },
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#ffffff',
+                        font: { family: 'DM Sans', size: 11 }
+                    }
+                },
                 tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${formatBRL(ctx.parsed)}` }, bodyColor: '#f0e6ff', backgroundColor: 'rgba(42,13,74,0.95)' },
             },
         },
@@ -560,12 +572,43 @@ function renderBarChart() {
             }],
         },
         options: { /* Configurações visuais do chart.js */
-            responsive: true, maintainAspectRatio: true,
-            plugins: { legend: { display: false } },
-            scales: {
-                x: { ticks: { color: '#a78bfa', font: { size: 11 } }, grid: { color: 'rgba(168,85,247,0.08)' } },
-                y: { ticks: { color: '#a78bfa', font: { size: 11 }, stepSize: 1 }, grid: { color: 'rgba(168,85,247,0.08)' }, beginAtZero: true },
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
             },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#ffffff',
+                        font: { size: 11 }
+                    },
+                    grid: {
+                        display: false // 👈 Desliga as linhas verticais do fundo
+                    },
+                    border: {
+                        display: true,
+                        color: '#ffffff' // 👈 Pinta apenas a linha principal do eixo X
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#ffffff',
+                        font: { size: 11 },
+                        stepSize: 1
+                    },
+                    grid: {
+                        display: false // 👈 Desliga as linhas horizontais do fundo
+                    },
+                    border: {
+                        display: true,
+                        color: '#ffffff' // 👈 Pinta apenas a linha principal do eixo Y (o 0)
+                    }
+                }
+            }
         },
     });
 }
@@ -624,9 +667,9 @@ function initEmocional() {
 
     const btns = document.querySelectorAll('.mood-btn');
     const form = document.getElementById('emocionalForm');
-    
+
     // 2. DEPOIS: A trava de segurança! Se não tiver formulário, a função para aqui e não roda o resto.
-    if (!form) return; 
+    if (!form) return;
 
     // Faz os botões de emoji ficarem roxos quando clica neles
     btns.forEach(btn => {
