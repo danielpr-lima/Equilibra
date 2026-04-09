@@ -1,20 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/variaveis.css">
+
+    <!-- CSS da Home Original -->
+    <link rel="stylesheet" href="../css/variaveis.css" />
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/pgs-haeder.css" />
     <link rel="stylesheet" href="../css/pages/home.css" />
+    <link rel="stylesheet" href="../css/pages/section-diario.css" />
+    <link rel="stylesheet" href="../css/pages/reflexao.css" />
+    <link rel="stylesheet" href="../css/pages/footer-home.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Home</title>
+
+    <!-- CSS da Tela de Humor (Continuação) -->
+    <!-- Ajustei o caminho de ./ para ../ para manter o padrão da página Home -->
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>Equilíbra - Home e Diário</title>
   </head>
   <body>
-<nav class="navbar" id="navbar">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar" id="navbar">
       <div class="nav-right">
         <button class="btn-theme" id="themeBtn" aria-label="Alternar tema">
           <span id="themeIcon" aria-hidden="true">🌙</span>
@@ -31,8 +42,10 @@
           aria-expanded="false"
         ></button>
       </div>
+
       <ul class="nav-links" id="navLinks">
-        <li><a href="home.html" class="nav-link">Início</a></li>
+        <li><a href="#inicio" class="nav-link">Início</a></li>
+        <!-- Atualizado para ancora -->
         <li><a href="gastos.html" class="nav-link active">Gastos</a></li>
         <li><a href="metas.html" class="nav-link">Metas</a></li>
         <li><a href="planejamento.html" class="nav-link">Planejamento</a></li>
@@ -51,77 +64,177 @@
       </a>
     </nav>
 
-    <div class="section-1">
-    <section class="section-1-content">
-      <h2>Como você está se sentindo em relação ao<br> seu dinheiro hoje?</h2>
-      <div class="cards-sentimentos">
-        <div class="card-sentimento">
-          <p>
-            🤑 <br />
-            Muito bem, no controle
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p></p>
-            😬 <br />
-            Preocupada
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p>
-            😵<br />
-            Confusa
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p>
-            😌 <br />
-            Tranquila
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p>
-            🙂<br />
-            Estável
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p>
-            🤔<br />
-            Pensativa
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p>
-            💸<br />
-            Gastando demais
-          </p>
-        </div>
-        <div class="card-sentimento">
-          <p>
-            😭 <br />
-            Sobrevivendos
-          </p>
+    <!-- ================= PARTE 1: CONTEÚDO HOME ================= -->
+    <section id="inicio">
+      <div class="section-1">
+        <section class="section-1-content">
+          <h2>
+            Como você está se sentindo em relação ao<br />
+            seu dinheiro hoje?
+          </h2>
+          <div class="cards-sentimentos">
+            <div class="card-sentimento">
+              <p>
+                🤑 <br />
+                Muito bem, no controle
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                😬 <br />
+                Preocupada
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                😵<br />
+                Confusa
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                😌 <br />
+                Tranquila
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                🙂<br />
+                Estável
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                🤔<br />
+                Pensativa
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                💸<br />
+                Gastando demais
+              </p>
+            </div>
+            <div class="card-sentimento">
+              <p>
+                😭 <br />
+                Sobrevivendos
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="section-2">
+        <section class="section2-content">
+          <div class="card-section2">
+            <img src="../img/home/card1.svg" alt="" />
+            <button>Registrar Hoje</button>
+          </div>
+          <div class="card-section2">
+            <img src="../img/home/card2.svg" alt="" />
+            <button>Criar meta</button>
+          </div>
+          <div class="card-section2">
+            <img src="../img/home/card3.svg" alt="" />
+            <button>Ver evolução</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- ================= PARTE 2: CONTINUAÇÃO (ANTIGO INDEX) ================= -->
+    <section id="diario">
+      <!-- Ajustei o caminho da imagem de ./ para ../ -->
+      <img
+        src="../img/home/bonecolateral.svg"
+        alt="iconceboneca"
+        class="iconeimg"
+      />
+
+      <div class="card-container">
+        <h1 class="pergunta" id="label-diario">
+          Nos conte como foi o seu dia hoje:
+        </h1>
+
+        <div class="content">
+          <div class="mood-grid">
+            <button class="mood-btn"><span>😊</span> Bem</button>
+            <button class="mood-btn"><span>🤩</span> Incrível</button>
+            <button class="mood-btn"><span>😵‍💫</span> Confuso</button>
+            <button class="mood-btn"><span>🤔</span> Não sei</button>
+            <button class="mood-btn"><span>😔</span> Ruim</button>
+            <button class="mood-btn"><span>😫</span> Péssimo</button>
+          </div>
+
+          <div class="input-area">
+            <textarea
+              class="area-texto-diario"
+              aria-labelledby="label-diario"
+              placeholder="Digite aqui..."
+            >
+            </textarea>
+
+            <button class="save-btn">Salvar</button>
+          </div>
         </div>
       </div>
     </section>
-    </div>
 
-    <div class="section-2">
-        <section class="section2-content">
-            <div class="card-section2">
-                <img src="../img/home/card1.svg" alt="">
-                <button>Registrar Hoje</button>
+    <!-- ================= PARTE 3: reflexáo ================= -->
+    <section>
+      <div class="container">
+        <div class="img-icone">
+          <img
+            src="../img/home/freepik--Character--inject-66.svg"
+            alt="Ilustração de pessoa sentada mexendo no celular"
+          />
+        </div>
+        <div class="card">
+          <header class="card-titulo">
+            <span class="badge">Reflexão</span>
+          </header>
+          <div class="card-body">
+            <div class="input-group">
+              <p>Como me senti ao gastar por impulso?</p>
             </div>
-            <div class="card-section2">
-                <img src="../img/home/card2.svg" alt="">
-                <button>Criar meta</button>
+
+            <div class="input-group">
+              <p>Quais aprendizados eu tive ao economizar hoje?</p>
             </div>
-            <div class="card-section2">
-                <img src="../img/home/card3.svg" alt="">
-                <button>Ver evolução</button>
+
+            <div class="input-group notes">
+              <p>Anotações: <span class="line"></span></p>
+
+              <div class="input-area">
+                <textarea
+                  class="area-anotacao"
+                  aria-labelledby="label-diario"
+                ></textarea>
+              </div>
             </div>
-        </section>
-    </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-equilibra">
+        <p class="texto">
+            Aplicativo de diário financeiro desenvolvido para ajudar usuários a registrar seus gastos, definir metas e refletir melhor sobre suas finanças.
+        </p>
+
+        <nav class="footer-nav">
+            <a href="#">Contato</a>
+            <a href="#">Suporte</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Política de privacidade</a>
+        </nav>
+
+        <div class="footer-logo">
+            © 2026 Equilibra - Projeto acadêmico
+        </div>
+
+    </footer>
+    <script src="../js/theme.js"></script>
   </body>
 </html>

@@ -1,0 +1,84 @@
+/* Container do Footer */
+.footer-equilibra {
+    background: var(--nav-gradient-footer);
+    display: flex;
+    flex-direction: column;
+    color: var(--text-b);
+    /* cor do texto como branco. */
+    padding: 40px 20px;
+    /*  espaço entre o conteúdo e a borda do elemento. */
+    text-align: center;
+    /*  alinha todo o texto  ao centro horizontal do elemento. */
+    
+    /* diz até onde ele pode crescer (tela) */
+    margin: 20px auto;
+    margin-top: 200px;
+    /* espaço de 20 pixels acima e abaixo do bloco, separando-o de outros elementos. */
+}
+
+/* Texto de Descrição */
+.texto {
+    font-size: 1.1rem;
+    /* tamanho da fonte um pouco acima do padrão */
+    line-height: 1.5;
+    /* espaçamento entre as linhas. */
+    margin-bottom: 30px;
+    /* Cria um espaço abaixo do elemento */
+    max-width: 600px;
+    /* diz até onde ele pode crescer (tela) */
+    margin-left: auto;
+    /* distribuir o espaço disponível igualmente nos dois lados, centralizando o bloco na tela. */
+    margin-right: auto;
+    /* distribuir o espaço disponível igualmente nos dois lados, centralizando o bloco na tela. */
+}
+
+/* Links de Navegação */
+.footer-nav {
+    background: none;
+    display: flex;
+    /*  define o elemento como um container flexível. */
+    flex-direction: column;
+    /*  empilha os itens um embaixo do outro */
+    gap: 10px;
+    /*  cria um espaço fixo de 10 pixels entre cada item da coluna.  */
+    margin-bottom: 40px;
+    /* Cria um espaço abaixo do elemento */
+}
+
+.footer-nav a {
+    color: var(--text-b);
+    /* cor do texto como branco. */
+    text-decoration: none;
+    /* remove qualquer decoração padrão que o navegador aplique ao texto. */
+    font-size: 1rem;
+    /* tamanho da fonte um pouco acima do padrão */
+    transition: opacity 0.3s;
+    /* indica ao navegador que apenas a transparência do elemento deve ser animada. */
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+    /* define que o elemento terá 70% de opacidade (ou 30% de transparência). */
+}
+
+/* linha final */
+.footer-logo {
+    font-size: 25px;
+    /* tamanho da fonte um pouco acima do padrão */
+    font-weight: 300;
+    /*  controla a "grossura" da fonte */
+    letter-spacing: 0.5px;
+    /* adiciona uma distância extra de 0,5 pixels entre cada caractere. */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-col {
+        border-left: none !important;
+        text-align: center;
+    }
+
+    .footer-col li {
+        justify-content: center;
+    }
+}

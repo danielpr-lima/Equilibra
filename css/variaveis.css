@@ -10,6 +10,7 @@
   /* 1. Fundo Principal (body) */
   --bg-main: #DBA0FE;
   --nav-gradient: linear-gradient(to top, #D89DFB, #8733AC);
+  --nav-gradient-footer: linear-gradient(to bottom, #D89DFB, #8733AC);
 
   /* 2. Quadrados maiores (Cards, Navbar, Footer) */
   --bg-card: #AC52D9;
@@ -45,6 +46,7 @@
   /* 1. Fundo Principal */
   --bg-main: #2A1840;
   --nav-gradient: linear-gradient(to bottom, #1A0F2E, #2A1840);
+  --nav-gradient-footer: linear-gradient(to top, #1A0F2E, #2A1840);
 
   /* 2. Quadrados maiores */
   --bg-card: #42007C;

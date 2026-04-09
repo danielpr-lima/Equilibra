@@ -1,0 +1,96 @@
+/* Definição de cores e reset básico */
+
+.container{
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    position: relative;
+}
+
+.img-icone{
+    position: absolute;
+    left: 400px;
+    top: -150px;
+    z-index: 99;
+}
+
+
+/* Container do Card */
+.card {
+    margin: auto;
+    background-color:var(--bg-card);
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 30px;
+    /* Efeito de bordas sobrepostas (estilo cartoon/camadas do design) */
+    box-shadow: 8px 8px 0px #ffffff;
+    width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nome Reflexão */
+.badge {
+    background-color: var(--accent);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.area-anotacao {
+    width: 400px;
+    /* area de Texto (Input) */
+    height: 15px;
+    /* altura da área de texto */
+    background-color: var(--bg-main);;
+    /* cor do fundo do espaço de escrever*/
+    border-radius: 12px;
+    /* arredonda os quatro cantos do elemento */
+    padding: 13px;
+    /*  cria um espaço  entre a borda do elemento e o conteúdo dentro dele */
+    font-size: 1rem;
+    /*  define o tamanho da fonte como o padrão do navegador */
+    color: #FFF;
+    /* texto roxo */
+    resize: none;
+    /* impede que o usuário redimensione */
+    outline: none;
+    /* remove o contorno padrão ao clicar */
+    gap: 10px;
+
+}
+
+
+/* Estilo das faixas de perguntas */
+.input-group {
+    background-color: var(--input-bg);
+    color: var(--text-b);
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    gap: 15px;
+
+}
+
+/* Estilo específico para a linha de anotações */
+.notes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 40px;
+}
+
+.line {
+    flex-grow: 1;
+    height: 50px;
+    background-color: var(--text-b);
+    /* Cor da barra de preenchimento */
+    border-radius: 10px;
+}
