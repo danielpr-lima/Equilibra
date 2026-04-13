@@ -14,15 +14,17 @@ O projeto combate o analfabetismo financeiro comportamental, que gera ciclos de 
 * **Reflexão Financeira:** Compreensão de padrões e comportamentos ao longo do tempo.
 * **Organização Prática:** Registo centralizado de informações financeiras.
 * **Planeamento de Metas:** Definição de objetivos e acompanhamento de progresso.
+* **Insights Visuais:** Gráficos interativos para visualização clara de despesas e estados de humor.
 
 ## 🛠️ Tecnologias Utilizadas
 O projeto utiliza um conjunto moderno de tecnologias web para garantir interatividade e responsividade:
 
-* **HTML5:** Estruturação semântica do conteúdo.
-* **CSS3:** Estilização, layout e design responsivo.
-* **JavaScript (JS):** Lógica de programação e manipulação do DOM.
-* **GSAP (GreenSock Animation Platform):** Biblioteca utilizada para criar animações fluidas na interface, como transições de logomarca e elementos flutuantes.
-* **Google Fonts:** Utilização da fonte 'Poppins' para uma tipografia moderna.
+* **HTML5 & CSS3:** Estruturação semântica, layout e design responsivo.
+* **JavaScript (ES6 Modules):** Lógica de programação modular, facilitando a escalabilidade e manutenção.
+* **Web Storage API (LocalStorage):** Persistência de dados diretamente no navegador, sem necessidade de base de dados externa.
+* **Chart.js:** Renderização de gráficos dinâmicos de pizza e de barras.
+* **GSAP (GreenSock Animation Platform):** Biblioteca utilizada para criar animações fluidas na interface.
+* **Google Fonts:** Tipografia 'Poppins' para um design moderno.
 
 ## 📂 Organização de Diretórios
 
@@ -33,29 +35,28 @@ equilibra/
 ├── index.html                # Landing Page principal (apresentação)
 ├── README.md                 # Documentação principal do projeto
 ├── css/                      # Ficheiros de estilização modular
-│   ├── footer-style.css      # Estilos específicos do rodapé
-│   ├── home.css              # Estilos da página Home (dashboard)
-│   ├── parte1-style.css      # Estilos da secção inicial da Landing Page
-│   ├── parte2-style.css      # Estilos da secção de descrição
-│   └── parte3-style.css      # Estilos dos cards de benefícios
-├── app.js               # Arquivo principal que inicializa tudo (o antigo DOMContentLoaded)
-├── theme.js             # (Mantém como está, cuida do dark/light mode)
-├── animacao.js          # (Mantém como está, cuida do GSAP)
-└── modules/             # Nova pasta para organizar a lógica
-    ├── state.js         # Gerenciamento do LocalStorage e estado global (Mocks, persistAll)
-    ├── utils.js         # Funções ajudantes (formatBRL, formatDate, toast, uid)
-    ├── ui.js            # Lógica geral de interface (menu hamburger, modais, nav highlight)
-    ├── gastos.js        # Lógica exclusiva da tela de gastos
-    ├── metas.js         # Lógica exclusiva da tela de metas
-    ├── planejamento.js  # Lógica de orçamento e semanas
-    ├── grafico.js       # Configuração do Chart.js
-    ├── emocional.js     # Lógica do diário emocional
-    └── padroes.js       # Lógica de insights e padrões comportamentais
+│   ├── global.css            # Variáveis e estilos globais
+│   └── pages/                # Estilos específicos para cada ecrã
+├── js/                       # Scripts e lógica da aplicação
+│   ├── app.js                # Ficheiro principal orquestrador (inicializa módulos)
+│   ├── theme.js              # Gerenciador de tema (Dark/Light mode)
+│   ├── animacao.js           # Configuração de animações (GSAP)
+│   └── modules/              # Lógica modular separada por domínio
+│       ├── state.js          # Gestão do LocalStorage e estado global
+│       ├── utils.js          # Funções utilitárias (formatBRL, formatDate, toast)
+│       ├── ui.js             # Lógica de interface (menus, modais)
+│       ├── gastos.js         # Lógica exclusiva da gestão de gastos
+│       ├── metas.js          # Lógica exclusiva das metas
+│       ├── planejamento.js   # Lógica de orçamento e semanas
+│       ├── grafico.js        # Configuração do Chart.js
+│       ├── emocional.js      # Lógica do diário emocional
+│       └── padroes.js        # Lógica de insights e comportamentos
 ├── pages/                    # Páginas internas da aplicação
-│   └── home.html             # Página principal do utilizador (Dashboard)
+│   ├── home.html             # Dashboard principal do utilizador
+│   ├── gastos.html           # Ecrã de despesas
+│   ├── metas.html            # Ecrã de objetivos
+│   └── ...                   # (Restantes páginas internas)
 └── img/                      # Recursos visuais e identidade
     ├── bg/                   # Elementos gráficos de fundo (SVGs)
     ├── home/                 # Ilustrações e cards da página Home
     └── icons/                # Ícones e logomarca da plataforma
-    *© 2026 Equilibra - Projeto desenvolvido para fins académicos*.
-    
