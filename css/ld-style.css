@@ -114,7 +114,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
 
 .titulo-quadro {
@@ -432,7 +432,7 @@ text-align: center;
 
 }
 
-/* © 2026 Equilibra - Projeto acadêmico*/
+
 .footer-bottom p { 
     font-size: 0.8rem;  /*  tamanho de fonte */
     opacity: 0.6;  /*  nível de opacidade de todo o elemento */
@@ -451,3 +451,122 @@ text-align: center;
 
 
 
+/* ==========================================================================
+   Responsividade (Tablets e Celulares)
+   ========================================================================== */
+
+/* Telas menores que 1024px (Tablets e ecrãs mais estreitos) */
+@media (max-width: 1024px) {
+    /* 1. Removemos as alturas fixas (700px) para o conteúdo não vazar */
+    .conteiner-principal, 
+    .conteiner-parte2, 
+    .container-pt3 {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    /* 2. Primeira Seção: Coloca quadros em cima e imagem em baixo */
+    .conteudo-flex {
+        flex-direction: column;
+        gap: 50px;
+        text-align: center;
+    }
+    
+    .imagem {
+        margin: 0 auto;
+        width: 80%;
+    }
+
+    /* 3. Segunda Seção: Empilha a imagem e o texto */
+    .conteiner-parte2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .conteudo-esquerda {
+        width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .img-finance-parte2 {
+        margin: 0 auto;
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1250px) {
+    .imagem {
+        display: none;
+    }
+
+    .conteudo-esquerda>h2{
+        font-size: 40px;
+    }
+
+  
+}
+
+/* Telas menores que 768px (Celulares) */
+@media (max-width: 768px) {
+    /* 4. Cabeçalho: Empilha a Logo e o Menu */
+    .header-conteiner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    /* 5. Quadros da Home: Coloca um debaixo do outro */
+    .quadros {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .quadro-direito, 
+    .quadro-esquerdo {
+        width: 100%;
+        max-width: 370px;
+        height: auto;
+        min-height: 250px;
+    }
+
+    /* Centraliza os botões que antes ficavam à esquerda */
+    .coluna-bloco .botao,
+    .conteudo-esquerda .botao {
+        align-self: center;
+        margin-top: 20px;
+    }
+
+    /* 6. Ajuste de fontes gigantes para telemóvel */
+    .conteiner-parte2 h2 {
+        font-size: 2.2rem;
+        line-height: 1.3;
+    }
+
+    /* 7. Imagens ocupam quase toda a largura no telemóvel */
+    .imagem, 
+    .img-finance-parte2 {
+        width: 95%;
+    }
+
+    /* 8. Footer: Força cada coluna a usar o espaço todo e centraliza */
+    .footer-col { 
+        border-left: none !important; 
+        text-align: center; 
+        min-width: 100%; 
+        margin-bottom: 20px;
+    }
+    
+    .footer-col h4,
+    .footer-col li { 
+        justify-content: center; 
+    }
+}
