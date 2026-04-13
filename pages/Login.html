@@ -15,16 +15,24 @@
 
       <div class="right-login">
         <div class="card-login">
-          <h1>LOGIN</h1>
-          <div class="textfield">
-            <label for="usuario">Usuário</label>
-            <input type="text" id="usuario" placeholder="Usuário" />
-          </div>
-          <div class="textfield">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" placeholder="Senha" />
-          </div>
-          <button onclick="window.location.href='../pages/home.html'" class="btn-login">Login</button>
+          <form id="formLogin">
+            <h1>LOGIN</h1>
+            <div class="textfield">
+              <label for="usuario">Usuário</label>
+              <input type="text" id="usuario" placeholder="Usuário" />
+            </div>
+            <div class="textfield">
+              <label for="senha">Senha</label>
+              <input type="password" id="senha" placeholder="Senha" />
+            </div>
+          </form>
+          <button
+            onclick="window.location.href = '../pages/home.html'"
+            class="btn-login"
+          >
+            Login
+          </button>
+          <p>Ainda não tem conta? <a href="registro.html" class="btn-registro">Crie uma agora</a></p>
         </div>
       </div>
     </div>
