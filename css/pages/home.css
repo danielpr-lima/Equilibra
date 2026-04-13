@@ -2,15 +2,12 @@
    1. HOME.CSS - Estilos gerais da página inicial e seções principais
    ========================================================================== */
 
-*{
+* {
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style: none;
     font-family: 'Poppins', sans-serif;
-}
-nav {
-  height: 120px;
 }
 
 .mood-btn.active {
@@ -18,7 +15,12 @@ nav {
     transform: scale(1.05);
     border: 2px solid white;
 }
-.nav-logo {
+
+/* nav {
+  height: 120px;
+} */
+
+/* .nav-logo {
     font-size: 20px;
 }
 .logo-img {
@@ -31,7 +33,7 @@ nav {
 .nav-links a {
     font-weight: 600;
     font-size: 18px;
-}
+} */
 
 /* SEÇÃO 1 - Pergunta de sentimentos */
 .section-1 {
@@ -54,11 +56,10 @@ nav {
     font-size: 30px;
 }
 
-/* CORRIGIDO: Exatamente 4 colunas */
 .cards-sentimentos {
     margin: 0 5% 50px 5%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Força 4 colunas exatas */
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     justify-items: center;
     width: 90%;
@@ -71,8 +72,8 @@ nav {
     font-weight: 600;
     color: var(--text-m);
     height: 70px;
-    width: 100%; 
-    max-width: 280px; 
+    width: 100%;
+    max-width: 280px;
     border-radius: 35px;
     align-items: center;
     justify-content: center;
@@ -94,7 +95,7 @@ nav {
 
 .section2-content {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     max-width: 1700px;
     justify-content: center;
     margin: auto;
@@ -109,11 +110,17 @@ nav {
     align-items: center;
 }
 
+.card-section2>a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .card-section2 img {
     background-color: var(--inp-bg);
     border-radius: 50px;
     border: 2px solid var(--d-border-h);
-    width: 100%; 
+    width: 100%;
     max-width: 385px;
     transition: all 0.3s ease;
 }
@@ -149,7 +156,7 @@ nav {
 
 .card-container {
     background-color: var(--bg-card);
-    width: 90%; 
+    width: 90%;
     max-width: 800px;
     border-radius: 20px;
     padding: 30px;
@@ -279,12 +286,14 @@ nav {
 
 /* Card Roxo Central */
 .reflexoes-card-resumo {
-    background-color: #4a0f5a; /* Roxo vibrante escuro */
+    background-color: #4a0f5a;
+    /* Roxo vibrante escuro */
     border-radius: 16px;
     padding: 30px 40px;
     flex: 1.2;
     position: relative;
-    overflow: hidden; /* Corta os círculos decorativos que passarem da borda */
+    overflow: hidden;
+    /* Corta os círculos decorativos que passarem da borda */
 }
 
 .reflexoes-card-resumo h3 {
@@ -304,7 +313,8 @@ nav {
 }
 
 .reflexoes-card-resumo .destaque {
-    color: #ffffff; /* Deixa o "Feliz" em branco para destacar */
+    color: #ffffff;
+    /* Deixa o "Feliz" em branco para destacar */
 }
 
 /* Bolhas escuras de decoração dentro do card */
@@ -314,12 +324,14 @@ nav {
     border-radius: 50%;
     z-index: 1;
 }
+
 .blob-1 {
     width: 130px;
     height: 130px;
     top: -40px;
     left: -30px;
 }
+
 .blob-2 {
     width: 180px;
     height: 180px;
@@ -354,7 +366,7 @@ nav {
     height: 220px;
     object-fit: contain;
     /* Faz a imagem "flutuar" um pouco para cima, quebrando o alinhamento como no design */
-    transform: translateY(-25px); 
+    transform: translateY(-25px);
 }
 
 /* Emoções mais frequentes */
@@ -366,13 +378,14 @@ nav {
 }
 
 .emocoes-box {
-    background-color: #311142; /* Fundo mais escuro para a caixa dos emojis */
+    background-color: #311142;
+    /* Fundo mais escuro para a caixa dos emojis */
     border-radius: 16px;
     padding: 25px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: inset 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: inset 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .emocao-item {
@@ -393,7 +406,7 @@ nav {
     justify-content: center;
     align-items: center;
     font-size: 2.8rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Etiqueta abaixo do Emoji */
@@ -413,16 +426,16 @@ nav {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .reflexoes-card-resumo {
         width: 100%;
     }
-    
+
     .reflexoes-img-wrapper img {
         transform: translateY(0);
         height: 180px;
     }
-    
+
     .emocoes-box {
         flex-wrap: wrap;
         gap: 20px;
@@ -434,7 +447,7 @@ nav {
    4. REFLEXAO.CSS - Estilos da área de notas e reflexões
    ========================================================================== */
 
-.container{
+.container {
     top: 150px;
     display: flex;
     flex-direction: column;
@@ -442,7 +455,7 @@ nav {
     position: relative;
 }
 
-.img-icone{
+.img-icone {
     position: absolute;
     left: 400px;
     top: -150px;
@@ -452,7 +465,7 @@ nav {
 .card {
     margin: auto;
     background-color: var(--bg-card);
-    width: 90%; 
+    width: 90%;
     max-width: 800px;
     padding: 20px;
     border-radius: 30px;
@@ -473,7 +486,7 @@ nav {
 }
 
 .area-anotacao {
-    width: 100%; 
+    width: 100%;
     height: 15px;
     background-color: var(--bg-main);
     border-radius: 12px;
@@ -566,6 +579,7 @@ nav {
    ========================================================================== */
 
 @media (max-width: 1024px) {
+
     /* No tablet passa de 4 colunas para 2 colunas */
     .cards-sentimentos {
         grid-template-columns: repeat(2, 1fr);
@@ -573,8 +587,10 @@ nav {
 }
 
 @media (max-width: 900px) {
-    .iconeimg, .img-icone {
-        display: none; 
+
+    .iconeimg,
+    .img-icone {
+        display: none;
     }
 }
 
@@ -582,7 +598,7 @@ nav {
     .content {
         flex-direction: column;
     }
-    
+
     .mood-grid {
         grid-template-columns: repeat(3, 1fr);
         height: auto;
@@ -608,7 +624,7 @@ nav {
     .footer-equilibra {
         margin-top: 100px;
     }
-    
+
     .section-1-content h2 {
         font-size: 22px;
         margin: 30px 15px;
@@ -616,21 +632,25 @@ nav {
 }
 
 @media (max-width: 600px) {
+
     /* No telemóvel passa para 2 colunas */
     .cards-sentimentos {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px; /* Reduzimos o espaçamento para caber melhor no ecrã pequeno */
+        gap: 15px;
+        /* Reduzimos o espaçamento para caber melhor no ecrã pequeno */
     }
 
     /* Ajuste para o texto caber bem nas 2 colunas do telemóvel */
     .card-sentimento {
-        font-size: 0.8rem; /* Fonte ligeiramente menor */
-        height: auto; /* Permite que o cartão cresça se o texto quebrar de linha */
+        font-size: 0.8rem;
+        /* Fonte ligeiramente menor */
+        height: auto;
+        /* Permite que o cartão cresça se o texto quebrar de linha */
         min-height: 70px;
         padding: 10px 5px;
         text-align: center;
     }
-    
+
     .mood-grid {
         grid-template-columns: repeat(2, 1fr);
     }
