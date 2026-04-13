@@ -40,3 +40,4 @@ export const CAT_LABEL = {
     saude: 'Saúde', educacao: 'Educação', moradia: 'Moradia',
     vestuario: 'Vestuário', outros: 'Outros',
 };
+

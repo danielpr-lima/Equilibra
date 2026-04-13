@@ -1,5 +1,3 @@
-// js/modules/ui.js
-
 export function initNavHighlight() {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -37,6 +35,7 @@ export function initHamburger() {
 
     btn.addEventListener('click', () => {
         links.classList.toggle('open');
+        btn.classList.toggle('open');
     });
 }
 
