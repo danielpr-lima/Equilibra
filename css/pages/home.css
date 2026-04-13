@@ -589,7 +589,8 @@
 @media (max-width: 900px) {
 
     .iconeimg,
-    .img-icone {
+    .img-icone,
+    .reflexoes-img-wrapper {
         display: none;
     }
 }
