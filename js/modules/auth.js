@@ -33,7 +33,7 @@ export function initRegistroForm() {
 
         // Aguarda 1.5 segundos para a pessoa ler a mensagem verde e manda pro Login
         setTimeout(() => {
-            window.location.href = 'login.html';
+            window.location.href = 'Login.html';
         }, 1500);
     });
 }
