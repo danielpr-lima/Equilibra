@@ -1,0 +1,448 @@
+/* --- Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* background: linear-gradient(to bottom, #e46cff, #73068c); */
+    background-color: #AC52D9;
+    background-repeat: no-repeat;
+    /* min-height: 100vh; */
+}
+
+
+
+/* --- Header --- */
+.header {
+    background: linear-gradient(to right, #8733ac, #d756ee);
+    width: 100%;
+}
+
+.header-conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 1700px;
+    padding: 10px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+.texto-logo {
+    font-size: 24px;
+    color: white;
+}
+
+.nav a {
+    font-size: 18px;
+    color: white;
+    margin-left: 30px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #560277;
+}
+
+
+/* --- Layout Principal --- */
+.bg-onda {
+    background-image: url("../img/bg/bg-section1.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+
+.conteiner-principal {
+    max-width: 1700px;
+    height: 700px;
+    padding: 60px 20px;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.textos-topo {
+    color: white;
+}
+
+
+.conteudo-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.quadros {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+.coluna-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quadro-direito,
+.quadro-esquerdo {
+    background-color: white;
+    height: 300px;
+    width: 370px;
+    border-radius: 35px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-quadro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.titulo-quadro h3 {
+    color: #560277;
+    font-size: 22px;
+}
+
+
+.imagem {
+    width: 450px;
+    height: auto;
+    margin-right: 200px;
+    margin-top: -100px;
+}
+
+.botao {
+    background: linear-gradient(#73068c, #e46cff);
+    border-radius: 15px;
+    border: solid 1px white;
+    padding: 12px 40px;
+    margin-top: 25px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.botao:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+ /*==========================================================================
+                                    section 2
+  ==========================================================================*/
+
+  .bg-onda2{
+    background-image: url("../img/bg/bg-section2.svg");
+    background-color: #9341BD;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+}
+.conteiner-parte2{
+    max-width: 1700px;
+    height: 700px;
+    padding: 60px 20px;
+    display: flex;
+    margin: auto;
+    flex-direction: row;   
+    justify-content: space-evenly;
+}
+.conteudo-esquerda{
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 0px;
+    width: 50%;
+    color: white;
+}
+.conteiner-parte2 h2{
+    font-size: 60px;
+}
+.conteiner-parte2 p{
+    font-size: 20px;
+}
+.img-finance-parte2{
+    height: 450px;
+    margin: auto auto auto 0;
+}
+
+
+.bg-onda3{
+    background-color: #EBC3FF;
+    background-image: url("../img/bg/bg-section3.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+ /*==========================================================================
+                                    section 3
+  ==========================================================================*/
+
+.container-pt3 {
+    display: flex;
+    /* Transforma o elemento em um container flexível. */
+    flex-direction: column;
+    margin: auto;
+    padding: 60px 20px;    
+    text-align: center;
+    /* alinha todo o conteúdo interno */
+    max-width: 1700px;
+    /*  define um "limite de crescimento". */
+   height: 700px;
+
+}
+
+.container-pt3 h2 {
+    color: #2D3748;
+    /* cor do texto. */
+    margin-bottom: 40px;
+    /* cria um espaço de 40 pixels abaixo do texto. */
+    font-size: 2rem;
+    /* Defin e um tamanho de fonte. */
+}
+
+
+.cards-wrapper {
+    display: flex;
+    /* Transforma o elemento em um container flexível. */
+    flex-wrap: wrap;
+    /* Se não houver espaço suficiente para um item caber na linha atual, jogue  para a próxima linha. */
+    gap: 20px;
+    /*  cria um espaçamento uniforme de 20 pixels entre todos os itens */
+    justify-content: center;
+    /* alinha o conteúdo horizontalmente no centro */
+}
+
+/* Estilo do Card Individual */
+.card {
+
+    background: white;
+    /* cor do fundo */
+    padding: 30px 20px;
+    /*  define o espaçamento interno */
+    border-radius: 15px;
+    /* arredonda os quatro cantos do elemento. */
+    width: 302px;
+    height: 302px;
+    /* Largura /*  
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /*  sombra suave */
+    display: flex;
+    /* transforma o elemento em um container flexível. */
+    flex-direction: column;
+    /* empilha um em cima do outro */
+    align-items: center;
+    /* elemento centralizado em relação à largura do container.*/
+    transition: transform 0.3s ease;
+    /*  o navegador deve animar mudanças de escala, rotação ou posição. */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    /*  "flutue" para uma nova posição sem empurrar os vizinhos. */
+}
+
+/* Ícone de Check */
+.icon-check {
+    width: 40px;
+    /* largura */  
+    height: 40px;
+    border: 2px solid #805AD5;
+    border-radius: 50%; /* arredonda os quatro cantos do elemento. */
+    display: flex;
+    /* transforma o elemento em um container flexível. */
+    align-items: center;
+    /* elemento centralizado em relação à largura do container.*/
+    justify-content: center;
+    /* alinha o conteúdo horizontalmente no centro */
+    margin-bottom: 20px;
+    /*  Cria uma separação de 20 pixels abaixo do texto. */
+    color: #805AD5;
+    /*  cor do texto */
+    font-weight: bold;
+    /* fonte em negrito */
+    font-size: 1.2rem;
+    /* tamanho de fonte */
+}
+
+.card h3 {
+    color: #4A128C;
+    /*  cor do texto */
+    font-size: 1.3rem;
+    /* tamanho de fonte */
+    margin-bottom: 10px;
+    /* cria um espaço de 10 pixels abaixo do texto. */
+    line-height: 1.2;
+    /* define o espaço entre as linhas do próprio texto. */
+}
+
+.card p {
+    color: #4A5568;
+    /*  cor do texto */
+    font-size: 18px;
+    /* tamanho de fonte */
+    line-height: 1.4;
+    margin-top: 10%;
+    /* define o espaço entre as linhas do próprio texto. */
+}
+
+
+ /*==========================================================================
+                                    footer
+  ==========================================================================*/
+
+.footer-container{
+    background-color: #4D2262; /* cor de fundo */
+}
+
+footer {
+    
+    color: var(--white); /*  cor do texto */
+    padding: 60px 40px 30px;   /* espaço interno entre o conteúdo e a borda. */
+    border-radius: 0 0 30px 30px; /* arredonda os cantos. */
+    margin-top: -10px; /* Sobreposição leve para remover frestas */
+}
+
+    /* Logo com o texto*/
+.footer-grid {
+    display: flex; /* transforma o elemento em um container flexível. */
+    justify-content: space-between; /* distribui os itens de forma que o primeiro encoste na borda esquerda e o último na borda direita, criando um espaço igual entre eles. */
+    flex-wrap: wrap; /* permite que, se não houver mais espaço na largura da tela, os itens "quebrem" para a linha de baixo */
+    gap: 30px; /* Espaçamento entre o ícone e o texto */
+    max-width: 1100px; /* define uma "largura máxima". Isso impede que o seu conteúdo estique demais em monitores muito grandes */
+    margin: 0 auto; /* centralizar o container na tela. */
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px; /* define uma largura mínima obrigatória.*/
+    padding: 0 15px; /* cria um espaçamento interno apenas nas laterais.*/
+}
+
+/* Linhas divisórias verticais */
+.footer-col:not(:first-child) {
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Titulos das divisoes*/
+.footer-col h4 { 
+    margin-bottom: 20px; /*  define um espaçamento externo inferior de 20 pixels.*/
+    font-size: 0.85rem; /* tamanho de fonte menor que o padrão */
+    margin-bottom: 12px;  /* uma margem menor, geralmente usada para separar itens de uma lista ou um subtítulo do conteúdo principal. */
+    display: flex; /* transforma o elemento em um container flexível. */
+    align-items: center; /* alinha o conteúdo verticalmente no centro */
+    gap: 30px;  /* Espaçamento entre o ícone e o texto */
+    color: white; /*  cor do texto */
+    justify-content: center;
+
+}
+
+/* Frase: Projeto desenvolvido para fins educacionais */
+.footer-col p {
+    text-align: center; /*  distribui o texto a partir do centro do container. */
+    font-size: 0.85rem; /*  tamanho de fonte */
+    color: white; /* cor do texto */
+    
+}
+
+.footer-col a { 
+        color: white; /*  cor do texto */
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col li {
+    font-size: 0.85rem; /*  tamanho de fonte */
+    margin-bottom: 12px;  /*  define um espaçamento externo inferior de 12 pixels.*/
+    display: flex; /* transforma o elemento em um container flexível. */
+    align-items: center; /* alinha o conteúdo verticalmente no centro  */
+    gap: 10px; /* Espaçamento entre o ícone e o texto */
+    opacity: 0.9; /*  nível de opacidade de todo o elemento */
+    color: white; /*  cor do texto */
+}
+
+/* Estilo da Logo */
+.brand-info { 
+text-align: center; 
+
+}
+
+.logo { 
+    font-size: 1.5rem;  /*  tamanho de fonte */
+    font-weight: bold; 
+    margin-bottom: 15px;  /*  define um espaçamento externo inferior de 15 pixels.*/
+    display: block; 
+    align-content: center;
+    color: white; /*  cor do texto */
+    align-items: center; /* alinha o conteúdo verticalmente no centro*/
+    display: flex; /* transforma o elemento em um container flexível. */
+    gap: 10px; /* Espaçamento entre o ícone e o texto */
+}
+
+.brand-description { 
+    color: white; /*  cor do texto */
+    font-size: 0.9rem;  /*  tamanho de fonte */
+    line-height: 1.6; 
+    opacity: 0.8;  /*  nível de opacidade de todo o elemento */
+}
+
+/* Rodapé de Direitos */
+.footer-bottom {
+    margin-top: 40px; /* sobreposição leve para remover frestas */
+    padding-top: 20px; /* espaço no topo. */
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.footer-bottom h3 { 
+    margin-bottom: 5px;  /*  define um espaçamento externo inferior de 5 pixels.*/
+    color: white; /*  cor do texto */
+
+}
+
+/* © 2026 Equilibra - Projeto acadêmico*/
+.footer-bottom p { 
+    font-size: 0.8rem;  /*  tamanho de fonte */
+    opacity: 0.6;  /*  nível de opacidade de todo o elemento */
+    color: white; /*  cor do texto */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-col { border-left: none !important; text-align: center; }
+    .footer-col li { justify-content: center; }
+}
+
+
+
+
+
+
