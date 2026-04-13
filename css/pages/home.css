@@ -1,3 +1,7 @@
+/* ==========================================================================
+   1. HOME.CSS - Estilos gerais da página inicial e seções principais
+   ========================================================================== */
+
 *{
     padding: 0;
     margin: 0;
@@ -22,10 +26,6 @@ nav {
     font-weight: 600;
     font-size: 18px;
 }
-
-/* ====================================================
-   HOME.CSS - Estilos da página inicial
-   ==================================================== */
 
 /* SEÇÃO 1 - Pergunta de sentimentos */
 .section-1 {
@@ -135,4 +135,342 @@ nav {
     background: var(--accent2);
     transform: scale(1.05);
     box-shadow: var(--d-shadow-glow);
+}
+
+
+/* ==========================================================================
+   2. SECTION-DIARIO.CSS - Estilos do formulário do diário
+   ========================================================================== */
+
+/* Container Principal (quadro transparente) */
+.card-container {
+    background-color: var(--bg-card);
+    /* quadro transparente */
+    max-width: 800px;
+    /* diz até onde ele pode crescer (tela) */
+    border-radius: 20px;
+    /* bordas arredondadas */
+    padding: 50px;
+    /* largura de um elemento  */
+    box-sizing: border-box;
+    /* inclui padding na largura */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* sombra suave */
+    text-align: center;
+    /*centraliza o conteúdo*/
+    margin: 100px auto;
+    /*centraliza o container*/
+    width: 800px;
+
+}
+
+/* Pergunta do container */
+.pergunta {
+    color: var(--text-b);
+    /* cor do texto como branco puro. */
+    margin-top: 0;
+    /* remove qualquer espaço acima do elemento. */
+    margin-bottom: 25px;
+    /* cria um espaço abaixo do elemento */
+    font-size: 25px;
+    /* tamanho da fonte */
+    font-weight: 500;
+    /* controla a "grossura" da fonte */
+}
+
+/* Área de Texto (Input) */
+.area-texto-diario {
+    width: 100%;
+    /* area de Texto (Input) */
+    height: 180px;
+    /* altura da área de texto */
+    background-color: var(--bg-main);
+    /* quadro transparente */
+    border: none;
+    /* remove qualquer borda padrão */
+    border-radius: 12px;
+    /* arredonda os quatro cantos do elemento */
+    padding: 15px;
+    /* cria um espaço de 15 pixels entre a borda do elemento e o conteúdo dentro dele */
+    font-size: 1rem;
+    /* define o tamanho da fonte como o padrão do navegador */
+    color: var(--text-b);
+    /* texto roxo */
+    box-sizing: border-box;
+    /* inclui padding na largura */
+    resize: none;
+    /* impede que o usuário redimensione */
+    outline: none;
+    /* remove o contorno padrão ao clicar */
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    flex: 1;
+    padding: 20px;
+    height: 10px;
+}
+
+/* Layout em duas colunas: botões à esquerda, texto à direita */
+.content {
+    display: flex;
+    gap: 20px;
+}
+
+
+.mood-btn {
+    background-color: var(--accent);
+    border: 1px solid #ba68c8;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+/* Muda a cor ao selecionar o humor */
+.mood-btn:hover {
+    background-color: #7b1fa2;
+    transform: scale(1.05);
+}
+
+/* Área para escrever texto */
+.input-area {
+    flex: 1.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.save-btn {
+    align-self: center;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de foco para acessibilidade */
+.area-texto-diario:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.iconeimg {
+    position: absolute;
+    left: calc(50% - 400px - 90px);
+
+}
+
+/* Responsividade - Seção Diário */
+@media (max-width: 768px) {
+    .footer-col {
+        border-left: none !important;
+        text-align: center;
+    }
+
+    .footer-col li {
+        justify-content: center;
+    }
+}
+
+
+/* ==========================================================================
+   3. REFLEXAO.CSS - Estilos da área de notas e reflexões
+   ========================================================================== */
+
+/* Definição de cores e reset básico */
+
+.container{
+    top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    position: relative;
+}
+
+.img-icone{
+    position: absolute;
+    left: 400px;
+    top: -150px;
+    z-index: 99;
+}
+
+
+/* Container do Card */
+.card {
+    margin: auto;
+    background-color:var(--bg-card);
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 30px;
+    /* Efeito de bordas sobrepostas (estilo cartoon/camadas do design) */
+    box-shadow: 8px 8px 0px #ffffff;
+    width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nome Reflexão */
+.badge {
+    background-color: var(--accent);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.area-anotacao {
+    width: 400px;
+    /* area de Texto (Input) */
+    height: 15px;
+    /* altura da área de texto */
+    background-color: var(--bg-main);;
+    /* cor do fundo do espaço de escrever*/
+    border-radius: 12px;
+    /* arredonda os quatro cantos do elemento */
+    padding: 13px;
+    /* cria um espaço  entre a borda do elemento e o conteúdo dentro dele */
+    font-size: 1rem;
+    /* define o tamanho da fonte como o padrão do navegador */
+    color: #FFF;
+    /* texto roxo */
+    resize: none;
+    /* impede que o usuário redimensione */
+    outline: none;
+    /* remove o contorno padrão ao clicar */
+    gap: 10px;
+
+}
+
+
+/* Estilo das faixas de perguntas */
+.input-group {
+    background-color: var(--input-bg);
+    color: var(--text-b);
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    display: flex;
+    gap: 15px;
+
+}
+
+/* Estilo específico para a linha de anotações */
+.notes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 40px;
+}
+
+.line {
+    flex-grow: 1;
+    height: 50px;
+    background-color: var(--text-b);
+    /* Cor da barra de preenchimento */
+    border-radius: 10px;
+}
+
+
+/* ==========================================================================
+   4. FOOTER-HOME.CSS - Estilos do rodapé da Home
+   ========================================================================== */
+
+/* Container do Footer */
+.footer-equilibra {
+    background: var(--nav-gradient-footer);
+    display: flex;
+    flex-direction: column;
+    color: var(--text-b);
+    /* cor do texto como branco. */
+    padding: 40px 20px;
+    /* espaço entre o conteúdo e a borda do elemento. */
+    text-align: center;
+    /* alinha todo o texto  ao centro horizontal do elemento. */
+    
+    /* diz até onde ele pode crescer (tela) */
+    margin: 20px auto;
+    margin-top: 200px;
+    /* espaço de 20 pixels acima e abaixo do bloco, separando-o de outros elementos. */
+}
+
+/* Texto de Descrição */
+.texto {
+    font-size: 1.1rem;
+    /* tamanho da fonte um pouco acima do padrão */
+    line-height: 1.5;
+    /* espaçamento entre as linhas. */
+    margin-bottom: 30px;
+    /* Cria um espaço abaixo do elemento */
+    max-width: 600px;
+    /* diz até onde ele pode crescer (tela) */
+    margin-left: auto;
+    /* distribuir o espaço disponível igualmente nos dois lados, centralizando o bloco na tela. */
+    margin-right: auto;
+    /* distribuir o espaço disponível igualmente nos dois lados, centralizando o bloco na tela. */
+}
+
+/* Links de Navegação */
+.footer-nav {
+    background: none;
+    display: flex;
+    /* define o elemento como um container flexível. */
+    flex-direction: column;
+    /* empilha os itens um embaixo do outro */
+    gap: 10px;
+    /* cria um espaço fixo de 10 pixels entre cada item da coluna.  */
+    margin-bottom: 40px;
+    /* Cria um espaço abaixo do elemento */
+}
+
+.footer-nav a {
+    color: var(--text-b);
+    /* cor do texto como branco. */
+    text-decoration: none;
+    /* remove qualquer decoração padrão que o navegador aplique ao texto. */
+    font-size: 1rem;
+    /* tamanho da fonte um pouco acima do padrão */
+    transition: opacity 0.3s;
+    /* indica ao navegador que apenas a transparência do elemento deve ser animada. */
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+    /* define que o elemento terá 70% de opacidade (ou 30% de transparência). */
+}
+
+/* linha final */
+.footer-logo {
+    font-size: 25px;
+    /* tamanho da fonte um pouco acima do padrão */
+    font-weight: 300;
+    /* controla a "grossura" da fonte */
+    letter-spacing: 0.5px;
+    /* adiciona uma distância extra de 0,5 pixels entre cada caractere. */
+}
+
+/* Responsividade - Footer */
+@media (max-width: 768px) {
+    .footer-col {
+        border-left: none !important;
+        text-align: center;
+    }
+
+    .footer-col li {
+        justify-content: center;
+    }
 }
