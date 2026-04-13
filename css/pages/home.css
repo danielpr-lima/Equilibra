@@ -93,37 +93,41 @@
     padding-bottom: 100px;
 }
 
+/* No seu home.css, localize ou adicione: */
+
 .section2-content {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1700px;
     justify-content: center;
-    margin: auto;
+    align-items: stretch; /* Garante que os cards tentem ter a mesma altura */
     gap: 40px;
-    padding: 0 20px;
 }
 
 .card-section2 {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.card-section2>a {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Empurra o botão para o fim do card */
+    flex: 1; /* Faz os cards crescerem igualmente */
+    min-width: 300px;
+    max-width: 385px;
 }
 
 .card-section2 img {
+    width: 100%;
+    height: 250px; /* Defina uma altura fixa para a área da imagem */
+    object-fit: contain; /* Garante que o SVG não distorça */
     background-color: var(--inp-bg);
     border-radius: 50px;
     border: 2px solid var(--d-border-h);
-    width: 100%;
-    max-width: 385px;
-    transition: all 0.3s ease;
 }
+
+.card-section2 > a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
 
 .card-section2 img:hover {
     box-shadow: var(--d-shadow);
