@@ -38,12 +38,24 @@ equilibra/
 │   ├── parte1-style.css      # Estilos da secção inicial da Landing Page
 │   ├── parte2-style.css      # Estilos da secção de descrição
 │   └── parte3-style.css      # Estilos dos cards de benefícios
-├── js/                       # Lógica e interatividade
-│   └── animacao.js           # Scripts de animação utilizando GSAP
+├── app.js               # Arquivo principal que inicializa tudo (o antigo DOMContentLoaded)
+├── theme.js             # (Mantém como está, cuida do dark/light mode)
+├── animacao.js          # (Mantém como está, cuida do GSAP)
+└── modules/             # Nova pasta para organizar a lógica
+    ├── state.js         # Gerenciamento do LocalStorage e estado global (Mocks, persistAll)
+    ├── utils.js         # Funções ajudantes (formatBRL, formatDate, toast, uid)
+    ├── ui.js            # Lógica geral de interface (menu hamburger, modais, nav highlight)
+    ├── gastos.js        # Lógica exclusiva da tela de gastos
+    ├── metas.js         # Lógica exclusiva da tela de metas
+    ├── planejamento.js  # Lógica de orçamento e semanas
+    ├── grafico.js       # Configuração do Chart.js
+    ├── emocional.js     # Lógica do diário emocional
+    └── padroes.js       # Lógica de insights e padrões comportamentais
 ├── pages/                    # Páginas internas da aplicação
 │   └── home.html             # Página principal do utilizador (Dashboard)
 └── img/                      # Recursos visuais e identidade
     ├── bg/                   # Elementos gráficos de fundo (SVGs)
     ├── home/                 # Ilustrações e cards da página Home
     └── icons/                # Ícones e logomarca da plataforma
-*© 2026 Equilibra - Projeto desenvolvido para fins académicos*.
+    *© 2026 Equilibra - Projeto desenvolvido para fins académicos*.
+    
