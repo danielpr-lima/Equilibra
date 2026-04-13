@@ -465,6 +465,10 @@ text-align: center;
         padding: 80px 20px;
     }
 
+    .botao:first-child{
+        display: none;
+    }
+
     /* 2. Primeira Seção: Coloca quadros em cima e imagem em baixo */
     .conteudo-flex {
         flex-direction: column;
