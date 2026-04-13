@@ -12,6 +12,12 @@
 nav {
   height: 120px;
 }
+
+.mood-btn.active {
+    background-color: #7b1fa2;
+    transform: scale(1.05);
+    border: 2px solid white;
+}
 .nav-logo {
     font-size: 20px;
 }
@@ -29,7 +35,6 @@ nav {
 
 /* SEÇÃO 1 - Pergunta de sentimentos */
 .section-1 {
-    /* Usamos o fundo do card para dar um contraste legal e respeitar o tema */
     background: var(--bg-main);
     padding-bottom: 40px;
 }
@@ -45,29 +50,29 @@ nav {
 
 .section-1-content h2 {
     margin: 50px;
-    /* Puxa a cor dos títulos que se adapta ao tema */
     color: var(--text-h);
     font-size: 30px;
 }
 
+/* CORRIGIDO: Exatamente 4 colunas */
 .cards-sentimentos {
-    margin: 0 50px 50px 50px;
+    margin: 0 5% 50px 5%;
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 50px;
+    grid-template-columns: repeat(4, 1fr); /* Força 4 colunas exatas */
+    gap: 30px;
+    justify-items: center;
+    width: 90%;
+    max-width: 1200px;
 }
 
 .card-sentimento {
     display: flex;
-    /* Fundo dos inputs/cards menores com a variável */
     background-color: var(--bg-card);
-    /* Borda baseada no destaque do tema */
-    /* border: 2px solid var(--inp-brd); */
-    /* Cor do texto para ficar legível no claro e escuro */
     font-weight: 600;
     color: var(--text-m);
     height: 70px;
-    width: 280px;
+    width: 100%; 
+    max-width: 280px; 
     border-radius: 35px;
     align-items: center;
     justify-content: center;
@@ -83,31 +88,33 @@ nav {
 
 /* SEÇÃO 2 - Botões de ação rápida */
 .section-2 {
-    /* Trocamos aquele gradiente fixo por um que usa as suas variáveis! */
     background: var(--bg-main);
     padding-bottom: 100px;
 }
 
 .section2-content {
     display: flex;
+    flex-wrap: wrap; 
     max-width: 1700px;
     justify-content: center;
     margin: auto;
-    gap: 80px;
+    gap: 40px;
+    padding: 0 20px;
 }
 
 .card-section2 {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .card-section2 img {
-    /* Se a imagem for transparente, o fundo do card aparece. Se não, podemos manter branco ou tirar o bg. */
     background-color: var(--inp-bg);
     border-radius: 50px;
     border: 2px solid var(--d-border-h);
-    width: 385px;
+    width: 100%; 
+    max-width: 385px;
     transition: all 0.3s ease;
 }
 
@@ -116,12 +123,11 @@ nav {
 }
 
 .card-section2 button {
-    /* Usa a cor de destaque principal (o Roxo escuro/claro dependendo do tema) */
     background: var(--accent);
-    color: #ffffff; /* Texto branco geralmente fica bem em botões primários */
+    color: #ffffff;
     width: 90%;
     border-radius: 35px;
-    border: none; /* Removida a borda fixa */
+    border: none;
     padding: 12px 40px;
     margin-top: 50px;
     cursor: pointer;
@@ -131,7 +137,6 @@ nav {
 }
 
 .card-section2 button:hover {
-    /* Cor do botão ao passar o mouse */
     background: var(--accent2);
     transform: scale(1.05);
     box-shadow: var(--d-shadow-glow);
@@ -142,66 +147,38 @@ nav {
    2. SECTION-DIARIO.CSS - Estilos do formulário do diário
    ========================================================================== */
 
-/* Container Principal (quadro transparente) */
 .card-container {
     background-color: var(--bg-card);
-    /* quadro transparente */
+    width: 90%; 
     max-width: 800px;
-    /* diz até onde ele pode crescer (tela) */
     border-radius: 20px;
-    /* bordas arredondadas */
-    padding: 50px;
-    /* largura de um elemento  */
+    padding: 30px;
     box-sizing: border-box;
-    /* inclui padding na largura */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    /* sombra suave */
     text-align: center;
-    /*centraliza o conteúdo*/
     margin: 100px auto;
-    /*centraliza o container*/
-    width: 800px;
-
 }
 
-/* Pergunta do container */
 .pergunta {
     color: var(--text-b);
-    /* cor do texto como branco puro. */
     margin-top: 0;
-    /* remove qualquer espaço acima do elemento. */
     margin-bottom: 25px;
-    /* cria um espaço abaixo do elemento */
     font-size: 25px;
-    /* tamanho da fonte */
     font-weight: 500;
-    /* controla a "grossura" da fonte */
 }
 
-/* Área de Texto (Input) */
 .area-texto-diario {
     width: 100%;
-    /* area de Texto (Input) */
     height: 180px;
-    /* altura da área de texto */
     background-color: var(--bg-main);
-    /* quadro transparente */
     border: none;
-    /* remove qualquer borda padrão */
     border-radius: 12px;
-    /* arredonda os quatro cantos do elemento */
     padding: 15px;
-    /* cria um espaço de 15 pixels entre a borda do elemento e o conteúdo dentro dele */
     font-size: 1rem;
-    /* define o tamanho da fonte como o padrão do navegador */
     color: var(--text-b);
-    /* texto roxo */
     box-sizing: border-box;
-    /* inclui padding na largura */
     resize: none;
-    /* impede que o usuário redimensione */
     outline: none;
-    /* remove o contorno padrão ao clicar */
 }
 
 .mood-grid {
@@ -210,15 +187,13 @@ nav {
     gap: 10px;
     flex: 1;
     padding: 20px;
-    height: 10px;
+    height: auto;
 }
 
-/* Layout em duas colunas: botões à esquerda, texto à direita */
 .content {
     display: flex;
     gap: 20px;
 }
-
 
 .mood-btn {
     background-color: var(--accent);
@@ -234,18 +209,17 @@ nav {
     transition: transform 0.2s;
 }
 
-/* Muda a cor ao selecionar o humor */
 .mood-btn:hover {
     background-color: #7b1fa2;
     transform: scale(1.05);
 }
 
-/* Área para escrever texto */
 .input-area {
-    flex: 1.5px;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
 }
 
 .save-btn {
@@ -260,7 +234,6 @@ nav {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito de foco para acessibilidade */
 .area-texto-diario:focus {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
@@ -268,27 +241,12 @@ nav {
 .iconeimg {
     position: absolute;
     left: calc(50% - 400px - 90px);
-
-}
-
-/* Responsividade - Seção Diário */
-@media (max-width: 768px) {
-    .footer-col {
-        border-left: none !important;
-        text-align: center;
-    }
-
-    .footer-col li {
-        justify-content: center;
-    }
 }
 
 
 /* ==========================================================================
    3. REFLEXAO.CSS - Estilos da área de notas e reflexões
    ========================================================================== */
-
-/* Definição de cores e reset básico */
 
 .container{
     top: 150px;
@@ -305,22 +263,18 @@ nav {
     z-index: 99;
 }
 
-
-/* Container do Card */
 .card {
     margin: auto;
-    background-color:var(--bg-card);
-    max-width: 600px;
+    background-color: var(--bg-card);
+    width: 90%; 
+    max-width: 800px;
     padding: 20px;
     border-radius: 30px;
-    /* Efeito de bordas sobrepostas (estilo cartoon/camadas do design) */
     box-shadow: 8px 8px 0px #ffffff;
-    width: 800px;
     position: relative;
     z-index: 1;
 }
 
-/* Nome Reflexão */
 .badge {
     background-color: var(--accent);
     color: #fff;
@@ -333,30 +287,18 @@ nav {
 }
 
 .area-anotacao {
-    width: 400px;
-    /* area de Texto (Input) */
+    width: 100%; 
     height: 15px;
-    /* altura da área de texto */
-    background-color: var(--bg-main);;
-    /* cor do fundo do espaço de escrever*/
+    background-color: var(--bg-main);
     border-radius: 12px;
-    /* arredonda os quatro cantos do elemento */
     padding: 13px;
-    /* cria um espaço  entre a borda do elemento e o conteúdo dentro dele */
     font-size: 1rem;
-    /* define o tamanho da fonte como o padrão do navegador */
     color: #FFF;
-    /* texto roxo */
     resize: none;
-    /* impede que o usuário redimensione */
     outline: none;
-    /* remove o contorno padrão ao clicar */
     gap: 10px;
-
 }
 
-
-/* Estilo das faixas de perguntas */
 .input-group {
     background-color: var(--input-bg);
     color: var(--text-b);
@@ -366,10 +308,8 @@ nav {
     font-size: 1.1rem;
     display: flex;
     gap: 15px;
-
 }
 
-/* Estilo específico para a linha de anotações */
 .notes {
     display: flex;
     align-items: center;
@@ -381,7 +321,6 @@ nav {
     flex-grow: 1;
     height: 50px;
     background-color: var(--text-b);
-    /* Cor da barra de preenchimento */
     border-radius: 10px;
 }
 
@@ -390,87 +329,123 @@ nav {
    4. FOOTER-HOME.CSS - Estilos do rodapé da Home
    ========================================================================== */
 
-/* Container do Footer */
 .footer-equilibra {
     background: var(--nav-gradient-footer);
     display: flex;
     flex-direction: column;
     color: var(--text-b);
-    /* cor do texto como branco. */
     padding: 40px 20px;
-    /* espaço entre o conteúdo e a borda do elemento. */
     text-align: center;
-    /* alinha todo o texto  ao centro horizontal do elemento. */
-    
-    /* diz até onde ele pode crescer (tela) */
     margin: 20px auto;
     margin-top: 200px;
-    /* espaço de 20 pixels acima e abaixo do bloco, separando-o de outros elementos. */
 }
 
-/* Texto de Descrição */
 .texto {
     font-size: 1.1rem;
-    /* tamanho da fonte um pouco acima do padrão */
     line-height: 1.5;
-    /* espaçamento entre as linhas. */
     margin-bottom: 30px;
-    /* Cria um espaço abaixo do elemento */
     max-width: 600px;
-    /* diz até onde ele pode crescer (tela) */
     margin-left: auto;
-    /* distribuir o espaço disponível igualmente nos dois lados, centralizando o bloco na tela. */
     margin-right: auto;
-    /* distribuir o espaço disponível igualmente nos dois lados, centralizando o bloco na tela. */
 }
 
-/* Links de Navegação */
 .footer-nav {
     background: none;
     display: flex;
-    /* define o elemento como um container flexível. */
     flex-direction: column;
-    /* empilha os itens um embaixo do outro */
     gap: 10px;
-    /* cria um espaço fixo de 10 pixels entre cada item da coluna.  */
     margin-bottom: 40px;
-    /* Cria um espaço abaixo do elemento */
 }
 
 .footer-nav a {
     color: var(--text-b);
-    /* cor do texto como branco. */
     text-decoration: none;
-    /* remove qualquer decoração padrão que o navegador aplique ao texto. */
     font-size: 1rem;
-    /* tamanho da fonte um pouco acima do padrão */
     transition: opacity 0.3s;
-    /* indica ao navegador que apenas a transparência do elemento deve ser animada. */
 }
 
 .footer-nav a:hover {
     opacity: 0.7;
-    /* define que o elemento terá 70% de opacidade (ou 30% de transparência). */
 }
 
-/* linha final */
 .footer-logo {
     font-size: 25px;
-    /* tamanho da fonte um pouco acima do padrão */
     font-weight: 300;
-    /* controla a "grossura" da fonte */
     letter-spacing: 0.5px;
-    /* adiciona uma distância extra de 0,5 pixels entre cada caractere. */
 }
 
-/* Responsividade - Footer */
+
+/* ==========================================================================
+   5. RESPONSIVIDADE (Tablets e Telemóveis)
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    /* No tablet passa de 4 colunas para 2 colunas */
+    .cards-sentimentos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .iconeimg, .img-icone {
+        display: none; 
+    }
+}
+
 @media (max-width: 768px) {
-    .footer-col {
-        border-left: none !important;
-        text-align: center;
+    .content {
+        flex-direction: column;
+    }
+    
+    .mood-grid {
+        grid-template-columns: repeat(3, 1fr);
+        height: auto;
+        padding: 10px 0;
     }
 
-    .footer-col li {
-        justify-content: center;
+    .notes {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 5px;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    .card-container {
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .footer-equilibra {
+        margin-top: 100px;
+    }
+    
+    .section-1-content h2 {
+        font-size: 22px;
+        margin: 30px 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* No telemóvel passa para 2 colunas */
+    .cards-sentimentos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Reduzimos o espaçamento para caber melhor no ecrã pequeno */
+    }
+
+    /* Ajuste para o texto caber bem nas 2 colunas do telemóvel */
+    .card-sentimento {
+        font-size: 0.8rem; /* Fonte ligeiramente menor */
+        height: auto; /* Permite que o cartão cresça se o texto quebrar de linha */
+        min-height: 70px;
+        padding: 10px 5px;
+        text-align: center;
+    }
+    
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
