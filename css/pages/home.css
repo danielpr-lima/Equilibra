@@ -243,9 +243,195 @@ nav {
     left: calc(50% - 400px - 90px);
 }
 
+/* ==========================================================================
+   PADRÕES EMOCIONAIS E REFLEXÕES (Design da Imagem)
+   ========================================================================== */
+
+.padroes-emocionais-sec {
+    /* Fundo gradiente roxo escuro baseado na imagem */
+    background: linear-gradient(135deg, #51276a, #281438);
+    border-radius: 30px;
+    padding: 40px 50px;
+    color: #fff;
+    width: 90%;
+    max-width: 900px;
+    margin: 80px auto;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-padroes {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+/* Container do topo (Card + Botão + Imagem) */
+.reflexoes-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Card Roxo Central */
+.reflexoes-card-resumo {
+    background-color: #4a0f5a; /* Roxo vibrante escuro */
+    border-radius: 16px;
+    padding: 30px 40px;
+    flex: 1.2;
+    position: relative;
+    overflow: hidden; /* Corta os círculos decorativos que passarem da borda */
+}
+
+.reflexoes-card-resumo h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.reflexoes-card-resumo p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #dfa6ff;
+    position: relative;
+    z-index: 2;
+}
+
+.reflexoes-card-resumo .destaque {
+    color: #ffffff; /* Deixa o "Feliz" em branco para destacar */
+}
+
+/* Bolhas escuras de decoração dentro do card */
+.blob {
+    position: absolute;
+    background-color: #270433;
+    border-radius: 50%;
+    z-index: 1;
+}
+.blob-1 {
+    width: 130px;
+    height: 130px;
+    top: -40px;
+    left: -30px;
+}
+.blob-2 {
+    width: 180px;
+    height: 180px;
+    bottom: -80px;
+    right: 20px;
+}
+
+/* Botão "Ver Gráfico" */
+.reflexoes-btn-wrapper {
+    flex-shrink: 0;
+    margin: 0 20px;
+}
+
+.btn-ver-grafico {
+    background: transparent;
+    border: 2px solid #ce8bff;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-ver-grafico:hover {
+    background-color: rgba(206, 139, 255, 0.2);
+    box-shadow: 0 0 15px rgba(206, 139, 255, 0.3);
+}
+
+/* Ilustração do Boneco */
+.reflexoes-img-wrapper img {
+    height: 220px;
+    object-fit: contain;
+    /* Faz a imagem "flutuar" um pouco para cima, quebrando o alinhamento como no design */
+    transform: translateY(-25px); 
+}
+
+/* Emoções mais frequentes */
+.emocoes-titulo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #e2c2f7;
+}
+
+.emocoes-box {
+    background-color: #311142; /* Fundo mais escuro para a caixa dos emojis */
+    border-radius: 16px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.emocao-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Círculo do Emoji */
+.emocao-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 2px solid #732c8c;
+    background-color: #1e052c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Etiqueta abaixo do Emoji */
+.emocao-label {
+    background-color: #1e052c;
+    border: 1px solid #732c8c;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Responsividade Básica para este bloco */
+@media (max-width: 900px) {
+    .reflexoes-top {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .reflexoes-card-resumo {
+        width: 100%;
+    }
+    
+    .reflexoes-img-wrapper img {
+        transform: translateY(0);
+        height: 180px;
+    }
+    
+    .emocoes-box {
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+}
 
 /* ==========================================================================
-   3. REFLEXAO.CSS - Estilos da área de notas e reflexões
+   4. REFLEXAO.CSS - Estilos da área de notas e reflexões
    ========================================================================== */
 
 .container{
@@ -326,7 +512,7 @@ nav {
 
 
 /* ==========================================================================
-   4. FOOTER-HOME.CSS - Estilos do rodapé da Home
+   5. FOOTER-HOME.CSS - Estilos do rodapé da Home
    ========================================================================== */
 
 .footer-equilibra {
